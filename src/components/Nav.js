@@ -1,9 +1,32 @@
-import React from 'react'
+import React from "react";
+import Logo from "../assets/Logo.svg";
 
 const Nav = () => {
   return (
-    <div>Nav</div>
-  )
-}
+    <>
+      <img src={Logo} alt="logo"></img>
+      <ul>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>About</a>
+        </li>
+        <li>
+          <a>Menu</a>
+        </li>
+        <li>
+          <a>Reservations</a>
+        </li>
+        <li>
+          <a>Order Online</a>
+        </li>
+        <li>
+          <a>Login</a>
+        </li>
+      </ul>
+    </>
+  );
+};
 
-export default Nav
+export default Nav;
