@@ -3,13 +3,13 @@ import Logo from "../assets/Logo.svg";
 
 const Nav = ({ id }) => {
   return (
-    <nav id={id} class="navbar sticky-top navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav id={id} className="navbar sticky-top navbar-expand-lg">
+      <div className="container">
+        <a className="navbar-brand" href="#">
           <img src={Logo} alt="Logo"></img>
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -17,26 +17,26 @@ const Nav = ({ id }) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <a className="nav-link" aria-current="page" href="#">
               Home
             </a>
-            <a class="nav-link" href="#about">
+            <a className="nav-link" href="#about">
               About
             </a>
-            <a class="nav-link" href="#menu">
+            <a className="nav-link" href="#menu">
               Menu
             </a>
-            <a class="nav-link" href="#reservations">
+            <a className="nav-link" href="#reservations">
               Reservations
             </a>
-            <a class="nav-link" href="#order-online">
+            <a className="nav-link" href="#order-online">
               Order Online
             </a>
-            <a class="nav-link" href="#login">
+            <a className="nav-link" href="#login">
               Login
             </a>
           </div>

@@ -11,7 +11,7 @@ $sub-title-fz: 40px;
 $sub-title-fw: normal;
 
 $lead-text-fz: 18px;
-$lead-text-fw: bold;
+$lead-text-fw: normal;
 $section-title-fz: 20px;
 $section-title-fw: bolder;
 $specials-fz: 16px;
@@ -39,8 +39,6 @@ $rounded-8: 8px;
 * {
   margin: 0;
   font-family: $font-content;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 /*NAVBAR*/
@@ -77,7 +75,45 @@ $rounded-8: 8px;
 
 /*HEADER*/
 #main-header {
-  display: grid;
+  background: $primary-green;
+  position: relative;
+
+  #main-title {
+    font-family: $font-headline;
+    font-weight: $display-title-fw;
+    font-size: $display-title-fz;
+    color: $primary-yellow;
+  }
+
+  #main-subtitle {
+    font-family: $font-headline;
+    font-weight: $sub-title-fw;
+    font-size: $sub-title-fz;
+    color: $basic-w;
+  }
+
+  #main-text {
+    font-weight: $lead-text-fw;
+    font-size: $lead-text-fz;
+    color: $basic-w;
+  }
+
+  .btn-primary {
+    background: $primary-yellow;
+    border: none;
+    color: $basic-b;
+    font-weight: $section-title-fw;
+    font-size: $section-title-fz;
+  }
+
+  .img-container {
+    
+  }
+  .header-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
 }
 
 /*MAIN*/
