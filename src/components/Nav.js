@@ -1,31 +1,48 @@
 import React from "react";
 import Logo from "../assets/Logo.svg";
 
-const Nav = () => {
+const Nav = ({ id }) => {
   return (
-    <>
-      <img src={Logo} alt="logo"></img>
-      <ul>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>About</a>
-        </li>
-        <li>
-          <a>Menu</a>
-        </li>
-        <li>
-          <a>Reservations</a>
-        </li>
-        <li>
-          <a>Order Online</a>
-        </li>
-        <li>
-          <a>Login</a>
-        </li>
-      </ul>
-    </>
+    <nav id={id} class="navbar sticky-top navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src={Logo} alt="Logo"></img>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">
+              Home
+            </a>
+            <a class="nav-link" href="#about">
+              About
+            </a>
+            <a class="nav-link" href="#menu">
+              Menu
+            </a>
+            <a class="nav-link" href="#reservations">
+              Reservations
+            </a>
+            <a class="nav-link" href="#order-online">
+              Order Online
+            </a>
+            <a class="nav-link" href="#login">
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from "react";
 import footerLogo from "../assets/footerLogo.png";
 
-const Footer = () => {
+const Footer = ({id}) => {
   return (
-    <>
+    <div id={id}>
       <img src={footerLogo}></img>
       <h3>Navigation</h3>
       <ul>
@@ -25,7 +25,7 @@ const Footer = () => {
         <li></li>
         <li></li>
       </ul>
-    </>
+    </div>
   );
 };
 

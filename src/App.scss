@@ -1,0 +1,91 @@
+/*STYLE VARIABLES*/
+/*TYPEFACES*/
+$font-headline: "Markazi Text", serif;
+$font-content: "Karla", sans-serif;
+
+/*TYPE SYSTEM*/
+$display-title-fz: 64px;
+$display-title-fw: bold;
+
+$sub-title-fz: 40px;
+$sub-title-fw: normal;
+
+$lead-text-fz: 18px;
+$lead-text-fw: bold;
+$section-title-fz: 20px;
+$section-title-fw: bolder;
+$specials-fz: 16px;
+$specials-fw: bolder;
+$card-title-fz: 18px;
+$card-title-fw: bold;
+$paragraph-fz: 16px;
+$paragraph-fw: lighter;
+$highlight-text-fz: 16px;
+$highlight-text-fw: bold;
+
+$primary-yellow: #f4ce14;
+$primary-green: #495e57;
+$secondary-orange: #ee9972;
+$secondary-pink: #fbdabb;
+$highlight-grey: #edefee;
+$highlight-black: #333333;
+$basic-b: black;
+$basic-w: white;
+
+$rounded-16: 16px;
+$rounded-8: 8px;
+
+/*APP*/
+* {
+  margin: 0;
+  font-family: $font-content;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*NAVBAR*/
+#navbar {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background: $basic-w;
+  font-weight: $display-title-fw;
+  font-size: $section-title-fz;
+
+  .nav-link {
+    background-color: $basic-w;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+  }
+
+  .nav-link::after {
+    background-color: $primary-yellow;
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/*HEADER*/
+#main-header {
+  display: grid;
+}
+
+/*MAIN*/
+
+/*SPECIALS*/
+
+/*TESTIMONIALS*/
+
+/*ABOUT*/
+
+/*FOOTER*/
