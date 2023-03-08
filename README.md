@@ -22,11 +22,11 @@ I've created a Persona, Journey Map, Wireframes and High-Fidelity Designs and Pr
 
 ### Persona
 
-![Little Lemon Persona](C:\Users\gabri\OneDrive\Desktop\MetaCourse\projectcapstone\src\Persona.png)
+![Little Lemon Persona](src\assets\Persona.png)
 
 ### Journey Map
 
-![Little Lemon Journey Map](C:\Users\gabri\OneDrive\Desktop\MetaCourse\projectcapstone\src\JourneyMap.png)
+![Little Lemon Journey Map](src\assets\JourneyMap.png)
 
 ### Wireframes, High-Fidelity Designs and Prototypes
 
