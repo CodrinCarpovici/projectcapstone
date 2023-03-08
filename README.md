@@ -22,11 +22,11 @@ I've created a Persona, Journey Map, Wireframes and High-Fidelity Designs and Pr
 
 ### Persona
 
-![Little Lemon Persona](src\assets\Persona.png)
+![Little Lemon Persona](Persona.png)
 
 ### Journey Map
 
-![Little Lemon Journey Map](src\assets\JourneyMap.png)
+![Little Lemon Journey Map](JourneyMap.png)
 
 ### Wireframes, High-Fidelity Designs and Prototypes
 
