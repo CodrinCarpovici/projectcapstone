@@ -1,8 +1,8 @@
 # Little Lemon Project Capstone
 
-## Meta proffesional Certificate
+## Meta Professional Certificate
 
-This repository serves the Little Lemon project for the Meta Proffesional Certificate.
+This repository serves the Little Lemon project for the Meta Professional Certificate.
 
 ## Goals
 
