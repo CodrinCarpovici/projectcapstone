@@ -208,4 +208,44 @@ $rounded-8: 8px;
 
 /*ABOUT*/
 
+#about {
+  #about-title {
+    font-family: $font-headline;
+    font-weight: $display-title-fw;
+    font-size: $display-title-fz;
+    color: $primary-yellow;
+  }
+
+  #about-subtitle {
+    font-family: $font-headline;
+    font-weight: $sub-title-fw;
+    font-size: $sub-title-fz;
+    color: $basic-b;
+  }
+
+  #about-text {
+    font-weight: $lead-text-fw;
+    font-size: $lead-text-fz;
+    color: $basic-b;
+  }
+  .col {
+    position: relative;
+    overflow: hidden;
+  }
+  .top-img {
+    position: absolute;
+    max-width: 250px;
+    z-index: 1;
+    top: 25%;
+    left: 20%;
+  }
+
+  .bottom-img {
+    position: absolute;
+    max-width: 250px;
+    z-index: -1;
+    left: 30%;
+  }
+}
+
 /*FOOTER*/
