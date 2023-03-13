@@ -107,7 +107,6 @@ $rounded-8: 8px;
   }
 
   .img-container {
-    
   }
   .header-img {
     width: 400px;
@@ -119,6 +118,25 @@ $rounded-8: 8px;
 /*MAIN*/
 
 /*SPECIALS*/
+#specials {
+  #specials-title {
+    font-family: $font-headline;
+    font-size: $display-title-fz;
+    font-weight: $display-title-fw;
+    margin-top: 15px;
+  }
+  .btn-primary {
+    background: $primary-yellow;
+    border: none;
+    color: $basic-b;
+    font-weight: $section-title-fw;
+    font-size: $section-title-fz;
+    margin-top: 15px;
+  }
+  .btn-container {
+
+  }
+}
 
 /*TESTIMONIALS*/
 

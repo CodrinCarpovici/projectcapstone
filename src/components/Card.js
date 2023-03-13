@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ( {children} ) => {
   return (
-    <div>Card</div>
+    <article className='container col'>
+      <img src="" alt="" />
+      <h2></h2>
+      <h2></h2>
+      <p></p>
+      <a href="">Order a delivery <img src="" alt="" /></a>
+      
+    </article>
   )
 }
 
