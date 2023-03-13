@@ -1,10 +1,11 @@
 import React from "react";
 import Card from "./Card";
+import data from "./data.js"
 
 const Specials = () => {
   return (
     <div className="container" id="specials">
-      <div className="row">
+      <div className="row" id="title-section">
         <div className="col">
           <h1 id="specials-title">This Week's Specials</h1>
         </div>
@@ -18,10 +19,16 @@ const Specials = () => {
           </a>
         </div>
       </div>
-      <div className="row">
-        <Card />
-        <Card />
-        <Card />
+      <div className="card-group">
+        {data.map((data) => (
+          <Card
+            key={data.title}
+            img={data.img}
+            title={data.title}
+            price={data.price}
+            description={data.description}
+          />
+        ))}
       </div>
     </div>
   );
