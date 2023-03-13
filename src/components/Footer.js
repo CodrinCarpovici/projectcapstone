@@ -1,30 +1,62 @@
 import React from "react";
 import footerLogo from "../assets/footerLogo.png";
 
-const Footer = ({id}) => {
+const Footer = ({ id }) => {
   return (
-    <footer id={id}>
-      <img src={footerLogo}></img>
-      <h3>Navigation</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <h3>Contact</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <h3>Social Links</h3>
-      <ul>
-        <li></li>
-        <li></li>
-      </ul>
+    <footer id={id} className="container-fluid p-3">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <a>
+              <img src={footerLogo}></img>
+            </a>
+          </div>
+          <div className="col">
+            <h3>Navigation</h3>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#menu">Menu</a>
+              </li>
+              <li>
+                <a href="#reservations">Reservations</a>
+              </li>
+              <li>
+                <a href="#order-online">Order Online</a>
+              </li>
+              <li>
+                <a href="#login">Login</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col">
+            <h3>Contact</h3>
+            <ul>
+              <li>Little Lemon Address, 555</li>
+              <li>Phone Number: + 555 5555 5555</li>
+              <li>
+                email: <a href="#">littlelemon@email.com</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col">
+            <h3>Social Links</h3>
+            <ul>
+              <li>
+                <a href="#">Instagram Link</a>
+              </li>
+              <li>
+                <a href="#">Facebook Link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

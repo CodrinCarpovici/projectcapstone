@@ -249,3 +249,32 @@ $rounded-8: 8px;
 }
 
 /*FOOTER*/
+#footer {
+  background: $primary-green;
+  img {
+    max-width: 100px;
+  }
+
+  h3 {
+    font-size: $card-title-fz;
+    font-weight: $card-title-fw;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    font-size: $paragraph-fz;
+    font-weight: $paragraph-fw;
+  }
+
+  a {
+    text-decoration: none;
+    color: $highlight-black;
+  }
+
+  a:hover {
+    color: $basic-b;
+  }
+}
