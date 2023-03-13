@@ -3,7 +3,7 @@ import restaurantFood from "../assets/restauranfood.jpg";
 
 const Header = ({ id }) => {
   return (
-    <header id={id} className="container-fluid">
+    <header id={id} className="container-fluid p-3">
       <div className="container">
         <div className="row">
           <div className="col">

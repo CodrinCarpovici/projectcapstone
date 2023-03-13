@@ -7,9 +7,9 @@ const Main = ({id}) => {
   return (
     <div id={id}>
       {" "}
-      <Specials />
-      <Testimonials />
-      <About />
+      <Specials id="specials"/>
+      <Testimonials id="testimonials"/>
+      <About id="about"/>
     </div>
   );
 };

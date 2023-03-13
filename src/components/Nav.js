@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.svg";
 
 const Nav = ({ id }) => {
   return (
-    <nav id={id} className="navbar sticky-top navbar-expand-lg">
+    <nav id={id} className="navbar sticky-top navbar-expand-lg p-3">
       <div className="container">
         <a className="navbar-brand" href="#">
           <img src={Logo} alt="Logo"></img>

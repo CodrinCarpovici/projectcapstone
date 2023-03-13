@@ -3,11 +3,11 @@ import cartIcon from "../assets/Basket.svg";
 
 const Card = (props) => {
   return (
-    <article className="card">
+    <article className="card col mx-2 p-0">
       <img className="card-img-top" src={props.img} alt="" />
       <div className="card-body" id="card-section">
-        <h5 className="card-title">{props.title}</h5>
-        <h5 className="card-title">{props.price}</h5>
+        <h5 className="card-title name">{props.title}</h5>
+        <h5 className="card-title name">{props.price}</h5>
         <p className="card-text">{props.description}</p>
       </div>
       <div className="card-footer">
