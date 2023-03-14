@@ -24,6 +24,7 @@ $highlight-text-fz: 16px;
 $highlight-text-fw: bold;
 
 $primary-yellow: #f4ce14;
+$hover-primary-yellow: #e4c113;
 $primary-green: #495e57;
 $secondary-orange: #ee9972;
 $secondary-pink: #fbdabb;
@@ -35,20 +36,46 @@ $basic-w: white;
 $rounded-16: 16px;
 $rounded-8: 8px;
 
+$button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+$card-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+$img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
 /*APP*/
 * {
   margin: 0;
   font-family: $font-content;
+
+  /*PRIMARY BUTTONS*/
+  .btn-primary {
+    background: $primary-yellow !important;
+    border: none !important;
+    font-family: $font-content !important;
+    font-size: $card-title-fz !important;
+    font-weight: $card-title-fw !important;
+    color: $basic-b !important;
+    box-shadow: $button-shadow;
+  }
+
+  .btn-primary:hover {
+    background: $hover-primary-yellow !important;
+  }
+
+  .btn-primary:active {
+    background: $secondary-orange !important;
+    color: $basic-w !important;
+  }
 }
+
+
 
 /*NAVBAR*/
 #navbar {
-  position: relative;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   background: $basic-w;
   font-weight: $display-title-fw;
   font-size: $section-title-fz;
+  box-shadow: $button-shadow;
 
   .nav-link {
     background-color: $basic-w;
@@ -110,6 +137,7 @@ $rounded-8: 8px;
     width: 400px;
     height: 400px;
     object-fit: cover;
+    box-shadow: $img-shadow;
   }
 }
 
@@ -136,6 +164,7 @@ $rounded-8: 8px;
 
   .card {
     background: $highlight-grey;
+    box-shadow: $card-shadow;
   }
   .card-img-top {
     width: 100%;
@@ -172,6 +201,10 @@ $rounded-8: 8px;
 
 #testimonials {
   background: $primary-green;
+
+  .card {
+    box-shadow: $card-shadow;
+  }
 
   #testimonials-title {
     font-family: $font-headline;
@@ -246,6 +279,10 @@ $rounded-8: 8px;
     z-index: -1;
     left: 30%;
   }
+
+  .img-fluid {
+    box-shadow: $img-shadow;
+  }
 }
 
 /*FOOTER*/
@@ -281,10 +318,70 @@ $rounded-8: 8px;
 
 /*DETAILS*/
 #details-page {
+  .details-header {
+    background: $primary-green;
+
+    .back-arrow {
+      width: 30px;
+      margin-right: 5px;
+    }
+
+    .btn-outline-primary {
+      background: none;
+      border-color: $primary-yellow !important;
+      color: $primary-yellow;
+      font-weight: $section-title-fw;
+      font-size: $section-title-fz;
+    }
+
+    .btn-outline-primary:hover {
+      background: $secondary-orange;
+      color: $basic-w;
+    }
+
+    #reserve-title {
+      font-family: $font-headline;
+      font-size: $display-title-fz;
+      font-weight: $display-title-fw;
+      color: $primary-yellow;
+    }
+  }
+
+  .details-img {
+    box-shadow: $img-shadow;
+  }
+
+  #details-form {
+    background: $highlight-grey;
+    .form-title {
+      font-family: $font-content;
+      font-size: $sub-title-fz;
+      font-weight: $sub-title-fw;
+    }
+
+    .form-group {
+      font-family: $font-content;
+      font-size: $lead-text-fz;
+      font-weight: $lead-text-fw;
+    }
+
+    select {
+      box-shadow: $button-shadow;
+      border-color: $primary-green;
+      border: 2px solid;
+      color: $primary-green;
+    }
+
+    select:active,
+    select:focus {
+      border-color: $primary-yellow;
+    }
+  }
+
   .dateselect {
     color: $basic-b !important;
   }
-  /* Customize the size of the datepicker label and numbers */
+  /* Custom size of the datepicker label and numbers */
   .react-datepicker__header {
     width: 100%;
     background-color: $primary-green !important;
@@ -299,15 +396,23 @@ $rounded-8: 8px;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    box-shadow: $button-shadow;
+    border-color: $primary-green;
+    border: 2px solid;
+    color: $primary-green;
+  }
+
+  .react-datepicker__input-container input:active,
+  .react-datepicker__input-container input:focus {
+    border-color: $primary-yellow;
   }
 
   .react-datepicker__day-name,
   .react-datepicker__day,
   .react-datepicker__time-name,
   .react-datepicker__time {
-    width: 38px !important;
-    height: 38px !important;
+    width: 55px !important;
+    height: 55px !important;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -316,7 +421,7 @@ $rounded-8: 8px;
   .react-datepicker-popper {
   }
 
-  /* Customize the styling of the selected date */
+  /* Custom styling of the selected date */
   .react-datepicker__day--selected {
     background-color: $primary-yellow !important;
     color: #fff !important;

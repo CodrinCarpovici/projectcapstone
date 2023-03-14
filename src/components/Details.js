@@ -1,34 +1,48 @@
 import React from "react";
 import backArrow from "../assets/backArrow.png";
 import Datepicker from "./Datepicker";
+import restaurantChefB from "../assets/restaurantChefB.jpg";
 
 const Details = ({ id }) => {
   return (
-    <section className="container-fluid p-3" id={id}>
-      <div className="container">
-        <button
-          type="button"
-          className="btn btn-primary justify-content-start back-button"
-        >
-          <img src={backArrow} alt="back-arrow" />
-          Back
-        </button>
-        <div className="d-flex flex-row justify-content-center p-0">
-          <h1>Reserve a Table</h1>
-
-          <div></div>
+    <section className="container-fluid" id={id}>
+      <div className="container details-header pb-4">
+        <div className="container">
+          <div className="d-flex justify-content-start pt-3">
+            <button
+              type="button"
+              className="btn btn-outline-primary back-button"
+            >
+              <img src={backArrow} alt="Back Arrow" className="back-arrow" />
+              Back
+            </button>
+          </div>
+          <div className="d-flex flex-row justify-content-center p-0">
+            <h1 id="reserve-title">Reserve a Table</h1>
+          </div>
         </div>
-        <img src="" alt="" />
-        <form>
+      </div>
+      <div className="container p-0">
+        <div className="container p-0">
+          <img
+            src={restaurantChefB}
+            alt="Chef Cooking B"
+            className="img-fluid details-img"
+          />
+        </div>
+        <form id="details-form">
           <fieldset>
-            <legend> Details </legend>
+            <legend className="d-flex justify-content-center pt-3 pb-3 form-title">
+              {" "}
+              Details{" "}
+            </legend>
             <div className="form-group row mb-3">
-              <div className="col">
+              <div className="col mx-3">
                 <label htmlFor="select" className="form-label">
                   Party Size
                 </label>
               </div>
-              <div className="col-4">
+              <div className="col-4 mx-3">
                 <select id="select" className="form-select">
                   <option defaultValue>Party Size</option>
                   <option value="1">1</option>
@@ -41,12 +55,12 @@ const Details = ({ id }) => {
               </div>
             </div>
             <div className="form-group row mb-3">
-              <div className="col">
+              <div className="col mx-3">
                 <label htmlFor="select" className="form-label">
                   Seating Type
                 </label>
               </div>
-              <div className="col-4">
+              <div className="col-4 mx-3">
                 <select id="select" className="form-select">
                   <option defaultValue>Seating Type</option>
                   <option value="Outdoor">Outdoor</option>
@@ -56,12 +70,12 @@ const Details = ({ id }) => {
             </div>
             <Datepicker />
             <div className="form-group row mb-3">
-              <div className="col">
+              <div className="col mx-3">
                 <label htmlFor="select" className="form-label">
                   Time
                 </label>
               </div>
-              <div className="col-4">
+              <div className="col-4 mx-3">
                 <select id="select" className="form-select">
                   <option defaultValue>Time</option>
                   <option value="17:00">17:00</option>
@@ -77,12 +91,12 @@ const Details = ({ id }) => {
               </div>
             </div>
             <div className="form-group row mb-3">
-              <div className="col">
+              <div className="col mx-3">
                 <label htmlFor="select" className="form-label">
                   Ocassion
                 </label>
               </div>
-              <div className="col-4">
+              <div className="col-4 mx-3">
                 <select id="select" className="form-select">
                   <option defaultValue>Occasion</option>
                   <option value="Dinner">Dinner</option>
@@ -94,10 +108,11 @@ const Details = ({ id }) => {
               </div>
             </div>
 
-            <div className="mb-3"></div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+            <div className="pb-3 pt-3 d-flex justify-content-center">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
           </fieldset>
         </form>
       </div>

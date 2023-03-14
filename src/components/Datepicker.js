@@ -7,19 +7,18 @@ const Datepicker = () => {
 
   return (
     <div className="form-group row mb-3">
-      <div className="col">
+      <div className="col mx-3">
         <label htmlFor="select" className="form-label date-select">
           Date
         </label>
       </div>
-      <div className="col-4">
+      <div className="col-4 mx-3">
         <DatePicker
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select a date"
+          placeholderText="Select a Date"
           className="form-select" 
-          popperPlacement="bottom-end"
           calendarClassName="custom-calendar"
         />
       </div>
