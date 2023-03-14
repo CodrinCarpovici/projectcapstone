@@ -139,7 +139,7 @@ $rounded-8: 8px;
   }
   .card-img-top {
     width: 100%;
-    height: 15vw;
+    height: 30%;
     object-fit: cover;
   }
   .name {
@@ -276,5 +276,56 @@ $rounded-8: 8px;
 
   a:hover {
     color: $basic-b;
+  }
+}
+
+/*DETAILS*/
+#details-page {
+  .dateselect {
+    color: $basic-b !important;
+  }
+  /* Customize the size of the datepicker label and numbers */
+  .react-datepicker__header {
+    width: 100%;
+    background-color: $primary-green !important;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__current-month {
+    color: $basic-w;
+  }
+  .react-datepicker__input-container input {
+    height: 38px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name,
+  .react-datepicker__time {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .react-datepicker-popper {
+  }
+
+  /* Customize the styling of the selected date */
+  .react-datepicker__day--selected {
+    background-color: $primary-yellow !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+  }
+
+  .react-datepicker-popper[data-show="true"]
+    .react-datepicker__month
+    .react-datepicker__day--selected {
+    background-color: #f4ce14 !important;
   }
 }

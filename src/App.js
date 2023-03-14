@@ -1,4 +1,5 @@
 import "./App.scss";
+import Details from "./components/Details";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -10,6 +11,7 @@ function App() {
       <Nav id="navbar"/>
       <Header id="main-header"/>
       <Main id="main-section"/>
+      <Details id="details-page" />
       <Footer id="footer"/>
     </>
   );
