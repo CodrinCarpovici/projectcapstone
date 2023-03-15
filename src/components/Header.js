@@ -21,7 +21,7 @@ const Header = ({ id }) => {
             <div className="container img-container">
               <img
                 src={restaurantFood}
-                className="rounded float-start header-img"
+                className="rounded img-fluid header-img"
                 alt="Header Image"
               ></img>
             </div>

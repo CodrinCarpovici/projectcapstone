@@ -26,6 +26,7 @@ $highlight-text-fw: bold;
 $primary-yellow: #f4ce14;
 $hover-primary-yellow: #e4c113;
 $primary-green: #495e57;
+$hover-primary-green: #3c4d47;
 $secondary-orange: #ee9972;
 $secondary-pink: #fbdabb;
 $highlight-grey: #edefee;
@@ -65,9 +66,6 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     color: $basic-w !important;
   }
 }
-
-
-
 /*NAVBAR*/
 #navbar {
   left: 0;
@@ -133,9 +131,13 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     font-size: $section-title-fz;
   }
 
+  .img-container {
+    max-height: 350px;
+    max-width: 400px;
+    overflow: hidden;
+  }
+
   .header-img {
-    width: 400px;
-    height: 400px;
     object-fit: cover;
     box-shadow: $img-shadow;
   }
@@ -335,6 +337,10 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     }
 
     .btn-outline-primary:hover {
+      background: $hover-primary-green;
+    }
+
+    .btn-outline-primary:active {
       background: $secondary-orange;
       color: $basic-w;
     }
@@ -347,8 +353,13 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     }
   }
 
+  .img-container {
+    max-height: 400px;
+    overflow: hidden;
+  }
   .details-img {
     box-shadow: $img-shadow;
+    object-fit: cover;
   }
 
   #details-form {

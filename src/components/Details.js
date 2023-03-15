@@ -23,7 +23,7 @@ const Details = ({ id }) => {
         </div>
       </div>
       <div className="container p-0">
-        <div className="container p-0">
+        <div className="container img-container p-0">
           <img
             src={restaurantChefB}
             alt="Chef Cooking B"

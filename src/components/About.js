@@ -24,12 +24,12 @@ const About = ({ id }) => {
           <div className="col">
             <img
               src={restaurant}
-              className="img-fluid top-img"
+              className="img-fluid top-img rounded"
               alt="restaurant"
             />
             <img
               src={marioAndAdrian}
-              className="img-fluid bottom-img"
+              className="img-fluid bottom-img rounded"
               alt="mario and adrian"
             />
           </div>
