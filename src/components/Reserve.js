@@ -42,19 +42,19 @@ const Reserve = ({ id }) => {
           <h2>Little Lemon</h2>
           {/*Replace with inputs */}
           <p>
-            <img src={customerIcon} alt="customer icon p-3" />
+            <img src={customerIcon} alt="customer icon" className="pe-3" />
             Table for 4 people
           </p>
           <p>
-            <img src={clockIcon} alt="clock icon p-3" />
+            <img src={clockIcon} alt="clock icon" className="pe-3" />
             19:00
           </p>
           <p>
-            <img src={tableIcon} alt="table icon p-3" />
+            <img src={tableIcon} alt="table icon" className="pe-3" />
             Outside
           </p>
           <p>
-            <img src={dishIcon} alt="dish icon p-3" />
+            <img src={dishIcon} alt="dish icon" className="pe-3" />
             Birthday
           </p>
         </div>
