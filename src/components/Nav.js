@@ -1,6 +1,8 @@
 import React from "react";
 import Logo from "../assets/Logo.svg";
 
+//FIX NAVBAR COLLAPSE
+
 const Nav = ({ id }) => {
   return (
     <nav id={id} className="navbar sticky-top navbar-expand-lg p-3">

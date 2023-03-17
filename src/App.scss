@@ -65,6 +65,39 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     background: $secondary-orange !important;
     color: $basic-w !important;
   }
+  /*FORM HEADER/OUTLINE BUTTON*/
+  .details-header {
+    background: $primary-green;
+
+    .back-arrow {
+      width: 30px;
+      margin-right: 5px;
+    }
+
+    .btn-outline-primary {
+      background: none;
+      border-color: $primary-yellow !important;
+      color: $primary-yellow;
+      font-weight: $section-title-fw;
+      font-size: $section-title-fz;
+    }
+
+    .btn-outline-primary:hover {
+      background: $hover-primary-green;
+    }
+
+    .btn-outline-primary:active {
+      background: $secondary-orange;
+      color: $basic-w;
+    }
+
+    #reserve-title {
+      font-family: $font-headline;
+      font-size: $display-title-fz;
+      font-weight: $display-title-fw;
+      color: $primary-yellow;
+    }
+  }
 }
 /*NAVBAR*/
 #navbar {
@@ -320,39 +353,6 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 
 /*DETAILS*/
 #details-page {
-  .details-header {
-    background: $primary-green;
-
-    .back-arrow {
-      width: 30px;
-      margin-right: 5px;
-    }
-
-    .btn-outline-primary {
-      background: none;
-      border-color: $primary-yellow !important;
-      color: $primary-yellow;
-      font-weight: $section-title-fw;
-      font-size: $section-title-fz;
-    }
-
-    .btn-outline-primary:hover {
-      background: $hover-primary-green;
-    }
-
-    .btn-outline-primary:active {
-      background: $secondary-orange;
-      color: $basic-w;
-    }
-
-    #reserve-title {
-      font-family: $font-headline;
-      font-size: $display-title-fz;
-      font-weight: $display-title-fw;
-      color: $primary-yellow;
-    }
-  }
-
   .img-container {
     max-height: 400px;
     overflow: hidden;
@@ -381,6 +381,8 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
       border-color: $primary-green;
       border: 2px solid;
       color: $primary-green;
+      background: #edefee;
+      font-weight: $display-title-fw;
     }
 
     select:active,
@@ -389,7 +391,7 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     }
   }
 
-  .dateselect {
+  .date-select {
     color: $basic-b !important;
   }
   /* Custom size of the datepicker label and numbers */
@@ -405,12 +407,13 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   .react-datepicker__input-container input {
     height: 38px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: $display-title-fw;
     line-height: 1.5;
     box-shadow: $button-shadow;
     border-color: $primary-green;
     border: 2px solid;
-    color: $primary-green;
+    color: $primary-green !important;
+    background-color: #edefee !important;
   }
 
   .react-datepicker__input-container input:active,
@@ -443,5 +446,77 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     .react-datepicker__month
     .react-datepicker__day--selected {
     background-color: #f4ce14 !important;
+  }
+}
+
+/*RESERVE*/
+#reserve-page {
+  .header {
+    position: relative;
+  }
+
+  .img-container {
+    max-height: 650px;
+    max-width: 600px;
+    overflow: hidden;
+  }
+
+  .header-img {
+    height: 650px;
+    width: 600px;
+    object-fit: cover;
+    box-shadow: $img-shadow;
+  }
+
+  .date {
+    text-align: center;
+  }
+  .details-text {
+    background: $primary-green;
+    color: $basic-w;
+    max-width: 70%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: $highlight-text-fw;
+    font-size: $highlight-text-fz;
+    box-shadow: $card-shadow;
+
+    h1 {
+      font-weight: $section-title-fw;
+      font-size: $display-title-fz;
+    }
+
+    h2 {
+      font-weight: $sub-title-fw;
+      font-size: $sub-title-fz;
+    }
+  }
+
+  .form {
+    .mb-3 {
+      font-size: $highlight-text-fz;
+      font-weight: $highlight-text-fw;
+
+      #emailHelp {
+        font-weight: normal;
+      }
+
+      input {
+        font-weight: normal;
+      }
+    }
+
+    .important-info {
+      font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+    }
+
+    .info-text {
+      font-weight: $paragraph-fw;
+      font-size: $paragraph-fz;
+    }
   }
 }

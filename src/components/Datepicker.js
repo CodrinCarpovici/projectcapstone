@@ -18,7 +18,7 @@ const Datepicker = () => {
           onChange={(date) => setSelectedDate(date)}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select a Date"
-          className="form-select" 
+          className="form-select date-select" 
           calendarClassName="custom-calendar"
         />
       </div>
