@@ -1,16 +1,16 @@
 import React from "react";
-import About from "./About";
+import Header from "./Header";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
 
-const Main = ({id}) => {
+const Main = ({ id }) => {
   return (
-    <div id={id}>
+    <main id={id}>
       {" "}
-      <Specials id="specials"/>
-      <Testimonials id="testimonials"/>
-      <About id="about"/>
-    </div>
+      <Header id="main-header" />
+      <Specials id="specials" />
+      <Testimonials id="testimonials" />
+    </main>
   );
 };
 

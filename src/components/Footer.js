@@ -3,7 +3,7 @@ import footerLogo from "../assets/footerLogo.png";
 
 const Footer = ({ id }) => {
   return (
-    <footer id={id} className="container-fluid p-3">
+    <footer id={id} className="container-fluid pt-3 mt-auto">
       <div className="container">
         <div className="row">
           <div className="col-sm">

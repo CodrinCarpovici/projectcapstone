@@ -2,6 +2,7 @@ import React from "react";
 import backArrow from "../assets/backArrow.png";
 import Datepicker from "./Datepicker";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
+import { Link } from "react-router-dom";
 
 const Details = ({ id }) => {
   return (
@@ -109,9 +110,9 @@ const Details = ({ id }) => {
             </div>
 
             <div className="pb-3 pt-3 d-flex justify-content-center">
-              <button type="submit" className="btn btn-primary">
+              <Link to="/confirm-reservation" type="submit" className="btn btn-primary">
                 Submit
-              </button>
+              </Link>
             </div>
           </fieldset>
         </form>

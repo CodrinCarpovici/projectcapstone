@@ -5,6 +5,7 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import restaurant from "../assets/restaurant.jpg";
+import { Link } from "react-router-dom";
 
 const Reserve = ({ id }) => {
   return (
@@ -105,9 +106,9 @@ const Reserve = ({ id }) => {
             </p>
           </div>
           <div className="pb-3 pt-3 d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary">
+            <Link to="/confirmation" type="submit" className="btn btn-primary">
               Reserve
-            </button>
+            </Link>
           </div>
         </form>
       </div>

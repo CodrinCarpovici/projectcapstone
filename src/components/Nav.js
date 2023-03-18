@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo.svg";
+import { Link } from "react-router-dom";
 
 //FIX NAVBAR COLLAPSE
 
@@ -24,14 +25,14 @@ const Nav = ({ id }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">
+              <Link to="/" className="nav-link" aria-current="page">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#about">
+              <Link to="/about" className="nav-link" href="#about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#menu">
@@ -39,9 +40,9 @@ const Nav = ({ id }) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#reservations">
+              <Link to="/booking-details" className="nav-link">
                 Reservations
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#order-online">

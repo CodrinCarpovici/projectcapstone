@@ -4,7 +4,7 @@ import Testimonial from "./Testimonial";
 
 const Testimonials = ({ id }) => {
   return (
-    <section className="container-fluid p-2" id={id}>
+    <section className="container-fluid pb-4" id={id}>
       <div className="container">
         <div className="container d-flex justify-content-center">
           <h1 id="testimonials-title">Testimonials</h1>
