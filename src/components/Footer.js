@@ -6,12 +6,12 @@ const Footer = ({ id }) => {
     <footer id={id} className="container-fluid p-3">
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-sm">
             <a>
-              <img src={footerLogo}></img>
+              <img src={footerLogo} className="img-fluid"></img>
             </a>
           </div>
-          <div className="col">
+          <div className="col mt-3">
             <h3>Navigation</h3>
             <ul>
               <li>
@@ -34,7 +34,7 @@ const Footer = ({ id }) => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col mt-3">
             <h3>Contact</h3>
             <ul>
               <li>Little Lemon Address, 555</li>
@@ -44,7 +44,7 @@ const Footer = ({ id }) => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col mt-3">
             <h3>Social Links</h3>
             <ul>
               <li>

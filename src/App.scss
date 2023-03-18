@@ -42,8 +42,16 @@ $card-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 
 /*APP*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
 * {
-  margin: 0;
   font-family: $font-content;
 
   /*PRIMARY BUTTONS*/
@@ -87,7 +95,7 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     }
 
     .btn-outline-primary:active {
-      background: $secondary-orange;
+      background: $secondary-orange !important;
       color: $basic-w;
     }
 
@@ -475,7 +483,7 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     background: $primary-green;
     color: $basic-w;
     max-width: 70%;
-    max-height: 80%;
+    max-height: 85%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -523,5 +531,20 @@ $img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 
 /*CONFIRMATION*/
 #confirmation-page {
-  
+  h1 {
+    font-weight: $display-title-fw;
+    font-size: $sub-title-fz;
+  }
+
+  .details-text {
+    font-weight: $highlight-text-fw;
+    font-size: $highlight-text-fz;
+  }
+
+  .customer-section {
+    .customer-details {
+      font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+    }
+  }
 }

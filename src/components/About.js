@@ -21,7 +21,7 @@ const About = ({ id }) => {
               mi iaculis, tempus dictum sapien vehicula.
             </p>
           </div>
-          <div className="col">
+          <div className="col d-none d-md-block">
             <img
               src={restaurant}
               className="img-fluid top-img rounded"

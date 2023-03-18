@@ -27,17 +27,12 @@ const Confirmation = ({ id }) => {
         </button>
       </div>
       <div className="container details-section">
-        <div className="container details-text p-4">
-          <div className="container date ">
-            <h2>March {/*Replace with form inputs */}</h2>
-            <h1>10 {/*Replace with form inputs */}</h1>
-            <h2>Saturday {/*Replace with form inputs */}</h2>
-          </div>
-          <h2>Little Lemon</h2>
+        <div className="container details-text p-0">
+          <h1 className="mb-4">Little Lemon</h1>
           {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
-            Table for 4 people
+            10/03/23
           </p>
           <p>
             <img src={customerIcon} alt="customer icon" className="pe-3" />
@@ -51,21 +46,23 @@ const Confirmation = ({ id }) => {
             <img src={tableIcon} alt="table icon" className="pe-3" />
             Outside
           </p>
-          <p>
+          <p className="mb-3">
             <img src={dishIcon} alt="dish icon" className="pe-3" />
             Birthday
           </p>
+          <button className="btn btn-primary mb-4">Manage Booking</button>
         </div>
       </div>
       <div className="container customer-section">
         <h1>Who's going?</h1>
-        <p className="">
-          <img src={goingIcon} alt="customer avatar" />
-          + 3 people
+        {/*Replace with inputs */}
+        <p className="customer-details ms-3">
+          <img src={goingIcon} alt="img-fluid customer avatar" />
+          &nbsp; + 3 people
         </p>
-        <p> Larry Watson </p>
+        <p className="customer-details ms-1"> Larry Watson </p>
         <h2>Email Confirmation</h2>
-        <p>
+        <p className="mb-4">
           An email confirmation with your booking details has been sent to you.
           We look forward to having you dine with us!
         </p>

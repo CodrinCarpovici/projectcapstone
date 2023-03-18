@@ -3,7 +3,7 @@ import star from "../assets/star.png";
 
 const Testimonial = (props) => {
   return (
-    <article className="card col mx-1 p-0 mb-3">
+    <article className="card col-sm me-2 p-0 mb-3">
       <div className="row">
         <div className="col-4">
           <img

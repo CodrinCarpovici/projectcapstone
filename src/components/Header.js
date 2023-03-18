@@ -17,8 +17,8 @@ const Header = ({ id }) => {
               Reserve a Table
             </a>
           </div>
-          <div className="col">
-            <div className="container img-container">
+          <div className="col d-none d-md-block">
+            <div className="container img-container ">
               <img
                 src={restaurantFood}
                 className="rounded img-fluid header-img"
