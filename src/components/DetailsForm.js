@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Datepicker from "./Datepicker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 
 const DetailsForm = (props) => {
@@ -55,7 +56,23 @@ const DetailsForm = (props) => {
             </select>
           </div>
         </div>
-        <Datepicker onDateChange={props.handleDateChange} date={props.date} />
+        <div className="form-group row mb-3">
+      <div className="col mx-3">
+        <label htmlFor="select" className="form-label date-select">
+          Date
+        </label>
+      </div>
+      <div className="col-4 mx-3">
+        <DatePicker
+          selected={props.date}
+          onChange={props.handleDateChange}
+          dateFormat="dd/MM/yyyy"
+          placeholderText="Select a Date"
+          className="form-select date-select" 
+          calendarClassName="custom-calendar"
+        />
+      </div>
+    </div>
         <div className="form-group row mb-3">
           <div className="col mx-3">
             <label htmlFor="select" className="form-label">
@@ -70,12 +87,12 @@ const DetailsForm = (props) => {
             >
               <option defaultValue>Time</option>
               {Array.isArray(props.availableTimes)
-                ? props.availableTimes.map((time) => (
+                && props.availableTimes.map((time) => (
                     <option key={time} value={time}>
                       {time}
                     </option>
                   ))
-                : console.log(props.availableTimes, "not an array")}
+                }
             </select>
           </div>
         </div>

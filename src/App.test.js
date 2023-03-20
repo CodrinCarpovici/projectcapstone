@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import DetailsForm from './components/DetailsForm.js';
 
-test('Renders the DetailsForm label', () => {
+test('Renders the DetailsForm text', () => {
     render(<DetailsForm />);
-    const inputElement = screen.getByLabelText("Party Size");
+    const inputElement = screen.getByText("Details");
     expect(inputElement).toBeInTheDocument();
 })

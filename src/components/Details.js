@@ -1,24 +1,21 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import backArrow from "../assets/backArrow.png";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
 import DetailsForm from "./DetailsForm.js";
-
-const initializeTimes = () => {
-  return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
-};
 
 function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
       return { ...state, date: action.payload.date };
-    case "INITIALIZE_TIMES":
-      return initializeTimes();
     default:
       return state;
   }
 }
 
 const Details = ({ id }) => {
+  const initializeTimes = () => {
+    return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
+  };
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   const [date, setDate] = useState(null);
 

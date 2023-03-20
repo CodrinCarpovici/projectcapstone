@@ -398,64 +398,66 @@ body {
     select:focus {
       border-color: $primary-yellow;
     }
-  }
 
-  .date-select {
-    color: $basic-b !important;
-  }
-  /* Custom size of the datepicker label and numbers */
-  .react-datepicker__header {
-    width: 100%;
-    background-color: $primary-green !important;
-  }
-
-  .react-datepicker__day-name,
-  .react-datepicker__current-month {
-    color: $basic-w;
-  }
-  .react-datepicker__input-container input {
-    height: 38px;
-    font-size: 16px;
-    font-weight: $display-title-fw;
-    line-height: 1.5;
-    box-shadow: $button-shadow;
-    border-color: $primary-green;
-    border: 2px solid;
-    color: $primary-green !important;
-    background-color: #edefee !important;
-  }
-
-  .react-datepicker__input-container input:active,
-  .react-datepicker__input-container input:focus {
-    border-color: $primary-yellow;
-  }
-
-  .react-datepicker__day-name,
-  .react-datepicker__day,
-  .react-datepicker__time-name,
-  .react-datepicker__time {
-    width: 55px !important;
-    height: 55px !important;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
-  .react-datepicker-popper {
-  }
-
-  /* Custom styling of the selected date */
-  .react-datepicker__day--selected {
-    background-color: $primary-yellow !important;
-    color: #fff !important;
-    font-weight: 600 !important;
-  }
-
-  .react-datepicker-popper[data-show="true"]
-    .react-datepicker__month
+    .date-select {
+      color: $basic-b !important;
+    }
+    /* Custom size of the datepicker label and numbers */
+    .react-datepicker__header {
+      width: 100%;
+      background-color: $primary-green !important;
+    }
+  
+    .react-datepicker__day-name,
+    .react-datepicker__current-month {
+      color: $basic-w;
+    }
+    .react-datepicker__input-container input {
+      height: 38px;
+      font-size: 16px;
+      font-weight: $display-title-fw;
+      line-height: 1.5;
+      box-shadow: $button-shadow;
+      border-color: $primary-green;
+      border: 2px solid;
+      color: $primary-green !important;
+      background-color: #edefee !important;
+    }
+  
+    .react-datepicker__input-container input:active,
+    .react-datepicker__input-container input:focus {
+      border-color: $primary-yellow;
+    }
+  
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name,
+    .react-datepicker__time {
+      width: 55px !important;
+      height: 55px !important;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  
+    .react-datepicker-popper {
+    }
+  
+    /* Custom styling of the selected date */
     .react-datepicker__day--selected {
-    background-color: #f4ce14 !important;
+      background-color: $primary-yellow !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+    }
+  
+    .react-datepicker-popper[data-show="true"]
+      .react-datepicker__month
+      .react-datepicker__day--selected {
+      background-color: #f4ce14 !important;
+    }
   }
+
+  
 }
 
 /*RESERVE*/
