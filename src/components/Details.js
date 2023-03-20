@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState, useReducer } from "react";
 import backArrow from "../assets/backArrow.png";
-import Datepicker from "./Datepicker";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
-import { Link } from "react-router-dom";
 import DetailsForm from "./DetailsForm.js";
 
+const initializeTimes = () => {
+  return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
+};
+
+function updateTimes(state, action) {
+  switch (action.type) {
+    case "UPDATE_TIMES":
+      return { ...state, date: action.payload.date };
+    case "INITIALIZE_TIMES":
+      return initializeTimes();
+    default:
+      return state;
+  }
+}
+
 const Details = ({ id }) => {
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const [date, setDate] = useState(null);
+
+  // Function to handle state change when the date is updated
+  const handleDateChange = (date) => {
+    dispatch({ type: "UPDATE_TIMES", payload: { date } });
+    setDate(date);
+  };
+
   return (
     <section className="container-fluid" id={id}>
       <div className="container details-header pb-4">
@@ -32,7 +54,11 @@ const Details = ({ id }) => {
             className="img-fluid details-img"
           />
         </div>
-        <DetailsForm />
+        <DetailsForm
+          availableTimes={availableTimes}
+          handleDateChange={handleDateChange}
+          date={date}
+        />
       </div>
     </section>
   );

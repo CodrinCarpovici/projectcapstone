@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Datepicker = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
+const Datepicker = (props) => {
+  
 
   return (
     <div className="form-group row mb-3">
@@ -14,8 +14,8 @@ const Datepicker = () => {
       </div>
       <div className="col-4 mx-3">
         <DatePicker
-          selected={selectedDate}
-          onChange={(input) => setSelectedDate(input)}
+          selected={props.date}
+          onChange={props.onDateChange}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select a Date"
           className="form-select date-select" 

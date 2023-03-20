@@ -2,22 +2,11 @@ import React, { useState } from "react";
 import Datepicker from "./Datepicker";
 import { Link } from "react-router-dom";
 
-const DetailsForm = () => {
+const DetailsForm = (props) => {
   const [partySize, setPartySize] = useState(null);
   const [seatingtype, setSeatingType] = useState(null);
   const [time, setTime] = useState(null);
   const [occasion, setOccasion] = useState(null);
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "17:30",
-    "18:00",
-    "18:30",
-    "19:00",
-    "19:30",
-    "20:00",
-    "20:30",
-    "21:00",
-  ]);
 
   return (
     <form id="details-form">
@@ -66,7 +55,7 @@ const DetailsForm = () => {
             </select>
           </div>
         </div>
-        <Datepicker />
+        <Datepicker onDateChange={props.handleDateChange} date={props.date} />
         <div className="form-group row mb-3">
           <div className="col mx-3">
             <label htmlFor="select" className="form-label">
@@ -80,11 +69,13 @@ const DetailsForm = () => {
               onChange={(input) => setTime(input)}
             >
               <option defaultValue>Time</option>
-              {availableTimes.map((time) => (
-                <option key={time} value={time}>
-                  {time}
-                </option>
-              ))}
+              {Array.isArray(props.availableTimes)
+                ? props.availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))
+                : console.log(props.availableTimes, "not an array")}
             </select>
           </div>
         </div>
