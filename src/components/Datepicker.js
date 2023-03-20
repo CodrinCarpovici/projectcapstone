@@ -15,7 +15,7 @@ const Datepicker = () => {
       <div className="col-4 mx-3">
         <DatePicker
           selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+          onChange={(input) => setSelectedDate(input)}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select a Date"
           className="form-select date-select" 
