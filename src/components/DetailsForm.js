@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 
 const DetailsForm = (props) => {
-  const [partySize, setPartySize] = useState(null);
-  const [seatingtype, setSeatingType] = useState(null);
-  const [time, setTime] = useState(null);
-  const [occasion, setOccasion] = useState(null);
 
   return (
     <form id="details-form">
@@ -26,7 +22,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => setPartySize(input)}
+              onChange={(input) => props.setPartySize(input)}
             >
               <option defaultValue>Party Size</option>
               <option value="1">1</option>
@@ -48,7 +44,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => setSeatingType(input)}
+              onChange={(input) => props.setSeatingType(input)}
             >
               <option defaultValue>Seating Type</option>
               <option value="Outdoor">Outdoor</option>
@@ -83,7 +79,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => setTime(input)}
+              onChange={(input) => props.setTime(input)}
             >
               <option defaultValue>Time</option>
               {Array.isArray(props.availableTimes)
@@ -106,7 +102,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => setOccasion(input)}
+              onChange={(input) => props.setOccasion(input)}
             >
               <option defaultValue>Occasion</option>
               <option value="Dinner">Dinner</option>

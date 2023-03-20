@@ -13,6 +13,12 @@ function updateTimes(state, action) {
 }
 
 const Details = ({ id }) => {
+  const [partySize, setPartySize] = useState(null);
+  const [seatingType, setSeatingType] = useState(null);
+  const [time, setTime] = useState(null);
+  const [occasion, setOccasion] = useState(null);
+
+  //useReducer implementation for date
   const initializeTimes = () => {
     return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
   };
@@ -52,9 +58,17 @@ const Details = ({ id }) => {
           />
         </div>
         <DetailsForm
-          availableTimes={availableTimes}
+          setPartySize={setPartySize}
+          partySize={partySize}
+          setSeatingType={setSeatingType}
+          seatingType={seatingType}
           handleDateChange={handleDateChange}
           date={date}
+          setTime={setTime}
+          time={time}
+          availableTimes={availableTimes}
+          setOccasion={setOccasion}
+          occasion={occasion}
         />
       </div>
     </section>
