@@ -1,6 +1,9 @@
 import React from "react";
 import footerLogo from "../assets/footerLogo.png";
 
+
+//FIX ME 
+
 const Footer = ({ id }) => {
   return (
     <footer id={id} className="container-fluid pt-3 mt-auto">
