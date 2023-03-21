@@ -21,6 +21,9 @@ const Reserve = (props) => {
     props.setPhoneNumber(e.target.phoneNumber.value);
   };
 
+  const [month, day] = props.date.toLocaleString().split('/');
+  const year = props.date.toLocaleString().year;
+
   return (
     <section className="container-fluid" id={props.id}>
       <div className="container details-header pb-4">
@@ -35,7 +38,7 @@ const Reserve = (props) => {
               Back
             </button>
           </div>
-          <div className="d-flex flex-row justify-content-center p-0">
+          <div className="p-0">
             <h1 id="reserve-title">Reserve a Table</h1>
           </div>
         </div>
@@ -48,13 +51,8 @@ const Reserve = (props) => {
             className="img-fluid header-img"
           />
         </div>
-        <div className="container details-text p-4">
-          <div className="container date ">
-            <h2>March {/*Replace with form inputs */}</h2>
-            <h1>10 {/*Replace with form inputs */}</h1>
-            <h2>Saturday {/*Replace with form inputs */}</h2>
-          </div>
-          <h2>Little Lemon</h2>
+        <div className="container  details-text p-4">
+          <h2 className="text-center">Little Lemon</h2>
           {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
