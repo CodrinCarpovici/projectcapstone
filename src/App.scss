@@ -362,6 +362,9 @@ body {
 
 /*DETAILS*/
 #details-page {
+  .details-header {
+    max-height: 170px;
+  }
   .img-container {
     max-height: 400px;
     overflow: hidden;
@@ -407,7 +410,7 @@ body {
       width: 100%;
       background-color: $primary-green !important;
     }
-  
+
     .react-datepicker__day-name,
     .react-datepicker__current-month {
       color: $basic-w;
@@ -423,12 +426,12 @@ body {
       color: $primary-green !important;
       background-color: #edefee !important;
     }
-  
+
     .react-datepicker__input-container input:active,
     .react-datepicker__input-container input:focus {
       border-color: $primary-yellow;
     }
-  
+
     .react-datepicker__day-name,
     .react-datepicker__day,
     .react-datepicker__time-name,
@@ -439,29 +442,30 @@ body {
       font-weight: 400;
       line-height: 1.5;
     }
-  
+
     .react-datepicker-popper {
     }
-  
+
     /* Custom styling of the selected date */
     .react-datepicker__day--selected {
       background-color: $primary-yellow !important;
       color: #fff !important;
       font-weight: 600 !important;
     }
-  
+
     .react-datepicker-popper[data-show="true"]
       .react-datepicker__month
       .react-datepicker__day--selected {
       background-color: #f4ce14 !important;
     }
   }
-
-  
 }
 
 /*RESERVE*/
 #reserve-page {
+  .details-header {
+    max-height: 170px;
+  }
   .header {
     position: relative;
   }
@@ -534,6 +538,9 @@ body {
 
 /*CONFIRMATION*/
 #confirmation-page {
+  .details-header {
+    height: 170px;
+  }
   h1 {
     font-weight: $display-title-fw;
     font-size: $sub-title-fz;

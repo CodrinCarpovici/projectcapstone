@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import calendarPlusIcon from "../assets/calendarPlusIcon.svg";
 import shareIcon from "../assets/shareIcon.svg";
 import calendarIcon from "../assets/calendarIcon.svg";
@@ -7,14 +7,17 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import goingIcon from "../assets/goingIcon.svg";
+import FormDataContext from './FormDataContext';
 
 const Confirmation = (props) => {
+  const { formData } = useContext(FormDataContext);
+
   return (
     <section className="container-fluid" id={props.id}>
       <div className="container details-header pb-4">
         <div className="container">
           <div className="d-flex flex-row justify-content-center p-0">
-            <h1 id="reserve-title">Booking Confirmed!</h1>
+            <h1 id="reserve-title" className="pt-5">Booking Confirmed!</h1>
           </div>
         </div>
       </div>
@@ -32,11 +35,11 @@ const Confirmation = (props) => {
           {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
-            10/03/23
+            {formData.date}
           </p>
           <p>
             <img src={customerIcon} alt="customer icon" className="pe-3" />
-            Table for 4 people
+            Table for {formData.date} people
           </p>
           <p>
             <img src={clockIcon} alt="clock icon" className="pe-3" />

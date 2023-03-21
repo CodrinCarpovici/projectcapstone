@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import restaurantFood from "../assets/restauranfood.jpg";
 
 const Header = ({ id }) => {
@@ -13,16 +14,16 @@ const Header = ({ id }) => {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <a className="btn btn-primary" href="#reserve" role="button">
+            <Link to="/booking-details" className="btn btn-primary" role="button">
               Reserve a Table
-            </a>
+            </Link>
           </div>
           <div className="col d-none d-md-block">
             <div className="container img-container ">
               <img
                 src={restaurantFood}
                 className="rounded img-fluid header-img"
-                alt="Header Image"
+                alt="Header"
               ></img>
             </div>
           </div>

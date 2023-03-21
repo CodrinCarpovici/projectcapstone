@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import FormDataContext from "./FormDataContext";
 
 const DetailsForm = (props) => {
+  const { formData, setFormData } = useContext(FormDataContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {
@@ -13,6 +15,13 @@ const DetailsForm = (props) => {
       occasion: props.occasion,
     };
     props.submitForm(formData);
+  };
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
   };
 
   return (
@@ -32,7 +41,9 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(event) => props.setPartySize(event.target.value)}
+              name="partySize"
+              value={formData.partySize}
+              onChange={handleChange}
             >
               <option defaultValue>Party Size</option>
               <option value="1">1</option>
@@ -54,7 +65,9 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(event) => props.setSeatingType(event.target.value)}
+              name="seatingType"
+              value={formData.seatingType}
+              onChange={handleChange}
             >
               <option defaultValue>Seating Type</option>
               <option value="Outdoor">Outdoor</option>
@@ -63,22 +76,24 @@ const DetailsForm = (props) => {
           </div>
         </div>
         <div className="form-group row mb-3">
-      <div className="col mx-3">
-        <label htmlFor="select" className="form-label date-select">
-          Date
-        </label>
-      </div>
-      <div className="col-4 mx-3">
-        <DatePicker
-          selected={props.date}
-          onChange={props.handleDateChange}
-          dateFormat="dd/MM/yyyy"
-          placeholderText="Select a Date"
-          className="form-select date-select" 
-          calendarClassName="custom-calendar"
-        />
-      </div>
-    </div>
+          <div className="col mx-3">
+            <label htmlFor="select" className="form-label date-select">
+              Date
+            </label>
+          </div>
+          <div className="col-4 mx-3">
+            <DatePicker
+              selected={props.date}
+              name="date"
+              value={formData.date}
+              onChange={props.handleDateChange}
+              dateFormat="dd/MM/yyyy"
+              placeholderText="Select a Date"
+              className="form-select date-select"
+              calendarClassName="custom-calendar"
+            />
+          </div>
+        </div>
         <div className="form-group row mb-3">
           <div className="col mx-3">
             <label htmlFor="select" className="form-label">
@@ -89,16 +104,17 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(event) => props.setTime(event.target.value)}
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
             >
               <option defaultValue>Time</option>
-              {Array.isArray(props.availableTimes)
-                && props.availableTimes.map((time) => (
-                    <option key={time} value={time}>
-                      {time}
-                    </option>
-                  ))
-                }
+              {Array.isArray(props.availableTimes) &&
+                props.availableTimes.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
+                  </option>
+                ))}
             </select>
           </div>
         </div>
@@ -112,7 +128,9 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(event) => props.setOccasion(event.target.value)}
+              name="occasion"
+              value={formData.occasion}
+              onChange={handleChange}
             >
               <option defaultValue>Occasion</option>
               <option value="Dinner">Dinner</option>
@@ -125,11 +143,7 @@ const DetailsForm = (props) => {
         </div>
 
         <div className="pb-3 pt-3 d-flex justify-content-center">
-          <button
-            type="submit"
-            className="btn btn-primary"
-            
-          >
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </div>

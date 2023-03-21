@@ -9,8 +9,12 @@ import Confirmation from "./components/Confirmation";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import FormDataContext from "./components/FormDataContext";
 
 function App() {
+  const [formData, setFormData] = useState({});
+
   return (
     <>
       <Nav id="navbar" />
@@ -19,15 +23,27 @@ function App() {
         <Route path="/about" element={<About id="about" />}></Route>
         <Route
           path="/booking-details"
-          element={<Details id="details-page" />}
+          element={
+            <FormDataContext.Provider value={{ formData, setFormData }}>
+              <Details id="details-page" />
+            </FormDataContext.Provider>
+          }
         ></Route>
         <Route
           path="/confirm-reservation"
-          element={<Reserve id="reserve-page" />}
+          element={
+            <FormDataContext.Provider value={{ formData, setFormData }}>
+              <Reserve id="reserve-page" />{" "}
+            </FormDataContext.Provider>
+          }
         ></Route>
         <Route
           path="/booking-confirmed"
-          element={<Confirmation id="confirmation-page" />}
+          element={
+            <FormDataContext.Provider value={{ formData, setFormData }}>
+              <Confirmation id="confirmation-page" />
+            </FormDataContext.Provider>
+          }
         ></Route>
       </Routes>
 

@@ -25,6 +25,7 @@ const Details = ({ id }) => {
   const [time, setTime] = useState(null);
   const [occasion, setOccasion] = useState(null);
 
+
   const navigate = useNavigate();
 
   //useReducer implementation for date
@@ -62,6 +63,7 @@ const Details = ({ id }) => {
             <button
               type="button"
               className="btn btn-outline-primary back-button"
+              onClick={() => navigate(-1)}
             >
               <img src={backArrow} alt="Back Arrow" className="back-arrow" />
               Back
@@ -94,6 +96,8 @@ const Details = ({ id }) => {
           occasion={occasion}
           submitForm={submitForm}
         />
+
+        
       </div>
     </section>
   );
