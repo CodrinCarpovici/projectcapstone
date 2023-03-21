@@ -6,7 +6,7 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import restaurant from "../assets/restaurant.jpg";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Reserve = (props) => {
   const navigate = useNavigate();
@@ -127,16 +127,13 @@ const Reserve = (props) => {
             </p>
           </div>
           <div className="pb-3 pt-3 d-flex justify-content-center">
-            <button
-              
-              type="submit"
-              className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
               Reserve
             </button>
           </div>
         </form>
       </div>
+
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import backArrow from "../assets/backArrow.png";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
 
@@ -160,6 +160,7 @@ const DetailsForm = (props) => {
             </div>
           </fieldset>
         </form>
+
       </div>
     </>
   );

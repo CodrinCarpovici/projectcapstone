@@ -393,8 +393,12 @@ body {
       border-color: $primary-green;
       border: 2px solid;
       color: $primary-green;
-      background: #edefee;
+      background-color: #edefee;
       font-weight: $display-title-fw;
+    }
+
+    select:hover {
+      cursor: pointer!important;
     }
 
     select:active,
@@ -404,6 +408,7 @@ body {
 
     .date-select {
       color: $basic-b !important;
+      cursor: pointer!important;
     }
     /* Custom size of the datepicker label and numbers */
     .react-datepicker__header {

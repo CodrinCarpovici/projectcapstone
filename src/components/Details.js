@@ -4,6 +4,7 @@ import DetailsForm from "./DetailsForm.js";
 import { fetchAPI, submitAPI } from "../api";
 import Confirmation from "./Confirmation.js";
 import Reserve from "./Reserve.js";
+import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 
 export function updateTimes(state, action) {
   switch (action.type) {
@@ -22,6 +23,8 @@ export const initializeTimes = async () => {
 const Details = ({ id }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isReserved, setIsReserved] = useState(false);
+
+  const navigate = useNavigate();
 
   //Form 1 Booking Details
   const [partySize, setPartySize] = useState(null);
@@ -57,62 +60,77 @@ const Details = ({ id }) => {
   const detailsFormIsSubmitted = () => {
     setIsReserved(true);
     console.log(isReserved);
+    navigate("confirmation");
   };
 
   const submitForm = async (formData) => {
     const success = await submitAPI(formData);
     if (success) {
       console.log(success);
+      console.log(isSubmitted);
       setIsSubmitted(true);
+      navigate("reserve");
     }
   };
 
   return (
     <section className="container-fluid" id={id}>
-      {!isSubmitted && (
-        <DetailsForm
-          setPartySize={setPartySize}
-          partySize={partySize}
-          setSeatingType={setSeatingType}
-          seatingType={seatingType}
-          handleDateChange={handleDateChange}
-          date={date}
-          setTime={setTime}
-          time={time}
-          availableTimes={availableTimes}
-          setOccasion={setOccasion}
-          occasion={occasion}
-          detailsFormIsSubmitted={detailsFormIsSubmitted}
-          submitForm={submitForm}
+      <Routes>
+        <Route
+          path=""
+          element={
+            <DetailsForm
+              setPartySize={setPartySize}
+              partySize={partySize}
+              setSeatingType={setSeatingType}
+              seatingType={seatingType}
+              handleDateChange={handleDateChange}
+              date={date}
+              setTime={setTime}
+              time={time}
+              availableTimes={availableTimes}
+              setOccasion={setOccasion}
+              occasion={occasion}
+              detailsFormIsSubmitted={detailsFormIsSubmitted}
+              submitForm={submitForm}
+            />
+          }
         />
-      )}
-      {isSubmitted && !isReserved &&(
-        <Reserve
-          id="reserve-page"
-          detailsFormIsSubmitted={detailsFormIsSubmitted}
-          partySize={partySize}
-          seatingType={seatingType}
-          date={date}
-          time={time}
-          occasion={occasion}
-          setFullName={setFullName}
-          setEmail={setEmail}
-          setPhoneNumber={setPhoneNumber}
+        <Route
+          path="reserve"
+          element={
+            <Reserve
+              id="reserve-page"
+              detailsFormIsSubmitted={detailsFormIsSubmitted}
+              partySize={partySize}
+              seatingType={seatingType}
+              date={date}
+              time={time}
+              occasion={occasion}
+              setFullName={setFullName}
+              setEmail={setEmail}
+              setPhoneNumber={setPhoneNumber}
+            />
+          }
         />
-      )}
-      {isReserved && (
-        <Confirmation
-          id="confirmation-page"
-          partySize={partySize}
-          seatingType={seatingType}
-          date={date}
-          time={time}
-          occasion={occasion}
-          fullName={fullName}
-          email={email}
-          phoneNumber={phoneNumber}
+        <Route
+          path="confirmation"
+          element={
+            <Confirmation
+              id="confirmation-page"
+              partySize={partySize}
+              seatingType={seatingType}
+              date={date}
+              time={time}
+              occasion={occasion}
+              fullName={fullName}
+              email={email}
+              phoneNumber={phoneNumber}
+            />
+          }
         />
-      )}
+      </Routes>
+      <Outlet />
     </section>
   );
 };

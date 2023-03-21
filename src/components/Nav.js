@@ -8,9 +8,9 @@ const Nav = ({ id }) => {
   return (
     <nav id={id} className="navbar sticky-top navbar-expand-lg p-3">
       <div className="container p-0">
-        <a className="navbar-brand" href="#">
+        <Link to="/" className="navbar-brand">
           <img src={Logo} alt="Logo"></img>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

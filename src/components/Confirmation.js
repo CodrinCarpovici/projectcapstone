@@ -7,6 +7,7 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import goingIcon from "../assets/goingIcon.svg";
+import { Outlet } from "react-router-dom";
 
 const Confirmation = (props) => {
   return (
@@ -68,6 +69,7 @@ const Confirmation = (props) => {
           We look forward to having you dine with us!
         </p>
       </div>
+
     </section>
   );
 };
