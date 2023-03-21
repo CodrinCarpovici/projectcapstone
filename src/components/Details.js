@@ -2,8 +2,9 @@ import React, { useState, useReducer, useEffect } from "react";
 import backArrow from "../assets/backArrow.png";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
 import DetailsForm from "./DetailsForm.js";
+import "./API.js"
 
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
       return { ...state, date: action.payload.date };
@@ -12,6 +13,10 @@ function updateTimes(state, action) {
   }
 }
 
+export const initializeTimes = () => {
+  return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
+};
+
 const Details = ({ id }) => {
   const [partySize, setPartySize] = useState(null);
   const [seatingType, setSeatingType] = useState(null);
@@ -19,9 +24,7 @@ const Details = ({ id }) => {
   const [occasion, setOccasion] = useState(null);
 
   //useReducer implementation for date
-  const initializeTimes = () => {
-    return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
-  };
+  
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   const [date, setDate] = useState(null);
 
@@ -30,6 +33,16 @@ const Details = ({ id }) => {
     dispatch({ type: "UPDATE_TIMES", payload: { date } });
     setDate(date);
   };
+
+  /*const fetchData = () => {
+    fetchAPI(new Date(date))
+    .then ((response) => response.json())
+    .then (());
+  };
+
+  useEffect(() => {
+    console.log(fetchData());
+  }, []);*/
 
   return (
     <section className="container-fluid" id={id}>
