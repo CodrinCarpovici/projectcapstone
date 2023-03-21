@@ -8,9 +8,9 @@ import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import goingIcon from "../assets/goingIcon.svg";
 
-const Confirmation = ({ id }) => {
+const Confirmation = (props) => {
   return (
-    <section className="container-fluid" id={id}>
+    <section className="container-fluid" id={props.id}>
       <div className="container details-header pb-4">
         <div className="container">
           <div className="d-flex flex-row justify-content-center p-0">

@@ -2,7 +2,8 @@ import React, { useState, useReducer, useEffect } from "react";
 import backArrow from "../assets/backArrow.png";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
 import DetailsForm from "./DetailsForm.js";
-import { fetchAPI } from "../api";
+import { fetchAPI, submitAPI } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export function updateTimes(state, action) {
   switch (action.type) {
@@ -24,6 +25,8 @@ const Details = ({ id }) => {
   const [time, setTime] = useState(null);
   const [occasion, setOccasion] = useState(null);
 
+  const navigate = useNavigate();
+
   //useReducer implementation for date
 
   const [availableTimes, dispatch] = useReducer(updateTimes, []);
@@ -43,6 +46,13 @@ const Details = ({ id }) => {
     }
     initialize();
   }, []);
+
+  const submitForm = async (formData) => {
+    const success = await submitAPI(formData);
+    if (success) {
+      navigate("/booking-confirmed");
+    }
+  };
 
   return (
     <section className="container-fluid" id={id}>
@@ -82,6 +92,7 @@ const Details = ({ id }) => {
           availableTimes={availableTimes}
           setOccasion={setOccasion}
           occasion={occasion}
+          submitForm={submitForm}
         />
       </div>
     </section>

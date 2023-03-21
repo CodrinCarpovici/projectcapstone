@@ -1,12 +1,22 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Link } from "react-router-dom";
 
 const DetailsForm = (props) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = {
+      partySize: props.partySize,
+      seatingType: props.seatingType,
+      date: props.date,
+      time: props.time,
+      occasion: props.occasion,
+    };
+    props.submitForm(formData);
+  };
 
   return (
-    <form id="details-form">
+    <form id="details-form" onSubmit={handleSubmit}>
       <fieldset>
         <legend className="d-flex justify-content-center pt-3 pb-3 form-title">
           {" "}
@@ -22,7 +32,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => props.setPartySize(input)}
+              onChange={(event) => props.setPartySize(event.target.value)}
             >
               <option defaultValue>Party Size</option>
               <option value="1">1</option>
@@ -44,7 +54,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => props.setSeatingType(input)}
+              onChange={(event) => props.setSeatingType(event.target.value)}
             >
               <option defaultValue>Seating Type</option>
               <option value="Outdoor">Outdoor</option>
@@ -79,7 +89,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => props.setTime(input)}
+              onChange={(event) => props.setTime(event.target.value)}
             >
               <option defaultValue>Time</option>
               {Array.isArray(props.availableTimes)
@@ -102,7 +112,7 @@ const DetailsForm = (props) => {
             <select
               id="select"
               className="form-select"
-              onChange={(input) => props.setOccasion(input)}
+              onChange={(event) => props.setOccasion(event.target.value)}
             >
               <option defaultValue>Occasion</option>
               <option value="Dinner">Dinner</option>
@@ -115,13 +125,13 @@ const DetailsForm = (props) => {
         </div>
 
         <div className="pb-3 pt-3 d-flex justify-content-center">
-          <Link
-            to="/confirm-reservation"
+          <button
             type="submit"
             className="btn btn-primary"
+            
           >
             Submit
-          </Link>
+          </button>
         </div>
       </fieldset>
     </form>

@@ -26,7 +26,7 @@ function App() {
           element={<Reserve id="reserve-page" />}
         ></Route>
         <Route
-          path="/confirmation"
+          path="/booking-confirmed"
           element={<Confirmation id="confirmation-page" />}
         ></Route>
       </Routes>
