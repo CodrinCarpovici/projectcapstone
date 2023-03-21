@@ -2,19 +2,20 @@ import React, { useState, useReducer, useEffect } from "react";
 import backArrow from "../assets/backArrow.png";
 import restaurantChefB from "../assets/restaurantChefB.jpg";
 import DetailsForm from "./DetailsForm.js";
-import "./API.js"
+import { fetchAPI } from "../api";
 
 export function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
-      return { ...state, date: action.payload.date };
+      return action.payload.times;
     default:
       return state;
   }
 }
 
-export const initializeTimes = () => {
-  return ["10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
+export const initializeTimes = async () => {
+  const today = new Date();
+  return await fetchAPI(today);
 };
 
 const Details = ({ id }) => {
@@ -24,25 +25,24 @@ const Details = ({ id }) => {
   const [occasion, setOccasion] = useState(null);
 
   //useReducer implementation for date
-  
+
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
-  const [date, setDate] = useState(null);
 
-  // Function to handle state change when the date is updated
-  const handleDateChange = (date) => {
-    dispatch({ type: "UPDATE_TIMES", payload: { date } });
+  const [date, setDate] = useState(new Date());
+
+  const handleDateChange = async (date) => {
     setDate(date);
-  };
-
-  /*const fetchData = () => {
-    fetchAPI(new Date(date))
-    .then ((response) => response.json())
-    .then (());
+    const times = await fetchAPI(date);
+    dispatch({ type: "UPDATE_TIMES", payload: { times } });
   };
 
   useEffect(() => {
-    console.log(fetchData());
-  }, []);*/
+    async function initialize() {
+      const times = await initializeTimes();
+      dispatch({ type: "UPDATE_TIMES", payload: { times } });
+    }
+    initialize();
+  }, []);
 
   return (
     <section className="container-fluid" id={id}>
