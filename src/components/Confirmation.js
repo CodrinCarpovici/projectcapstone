@@ -32,23 +32,23 @@ const Confirmation = (props) => {
           {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
-            10/03/23
+            {props.date.toLocaleDateString()}
           </p>
           <p>
             <img src={customerIcon} alt="customer icon" className="pe-3" />
-            Table for 4 people
+            Table for {props.partySize} people
           </p>
           <p>
             <img src={clockIcon} alt="clock icon" className="pe-3" />
-            19:00
+            {props.time}
           </p>
           <p>
             <img src={tableIcon} alt="table icon" className="pe-3" />
-            Outside
+            {props.seatingType}
           </p>
           <p className="mb-3">
             <img src={dishIcon} alt="dish icon" className="pe-3" />
-            Birthday
+            {props.occasion}
           </p>
           <button className="btn btn-primary mb-4">Manage Booking</button>
         </div>
@@ -58,12 +58,13 @@ const Confirmation = (props) => {
         {/*Replace with inputs */}
         <p className="customer-details ms-3">
           <img src={goingIcon} alt="img-fluid customer avatar" />
-          &nbsp; + 3 people
+          &nbsp; + {props.partySize - 1} people
         </p>
-        <p className="customer-details ms-1"> Larry Watson </p>
-        <h2>Email Confirmation</h2>
+        <p className="customer-details ms-1"> {props.fullName} </p>
+        <h2>Important Information</h2>
         <p className="mb-4">
-          An email confirmation with your booking details has been sent to you.
+          An email confirmation with your booking details has been sent to this email address: {props.email} <br/>
+          We'll try and reach you on {props.phoneNumber} if you are delayed, before cancelling the booking. <br/>
           We look forward to having you dine with us!
         </p>
       </div>

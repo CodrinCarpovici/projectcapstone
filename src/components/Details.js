@@ -1,9 +1,9 @@
 import React, { useState, useReducer, useEffect } from "react";
-import backArrow from "../assets/backArrow.png";
-import restaurantChefB from "../assets/restaurantChefB.jpg";
+
 import DetailsForm from "./DetailsForm.js";
 import { fetchAPI, submitAPI } from "../api";
-import { useNavigate } from "react-router-dom";
+import Confirmation from "./Confirmation.js";
+import Reserve from "./Reserve.js";
 
 export function updateTimes(state, action) {
   switch (action.type) {
@@ -20,13 +20,19 @@ export const initializeTimes = async () => {
 };
 
 const Details = ({ id }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isReserved, setIsReserved] = useState(false);
+
+  //Form 1 Booking Details
   const [partySize, setPartySize] = useState(null);
   const [seatingType, setSeatingType] = useState(null);
   const [time, setTime] = useState(null);
   const [occasion, setOccasion] = useState(null);
 
-
-  const navigate = useNavigate();
+  //Form 2 Personal Details
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   //useReducer implementation for date
 
@@ -48,40 +54,22 @@ const Details = ({ id }) => {
     initialize();
   }, []);
 
+  const detailsFormIsSubmitted = () => {
+    setIsReserved(true);
+    console.log(isReserved);
+  };
+
   const submitForm = async (formData) => {
     const success = await submitAPI(formData);
     if (success) {
-      navigate("/booking-confirmed");
+      console.log(success);
+      setIsSubmitted(true);
     }
   };
 
   return (
     <section className="container-fluid" id={id}>
-      <div className="container details-header pb-4">
-        <div className="container">
-          <div className="d-flex justify-content-start pt-3">
-            <button
-              type="button"
-              className="btn btn-outline-primary back-button"
-              onClick={() => navigate(-1)}
-            >
-              <img src={backArrow} alt="Back Arrow" className="back-arrow" />
-              Back
-            </button>
-          </div>
-          <div className="d-flex flex-row justify-content-center p-0">
-            <h1 id="reserve-title">Reserve a Table</h1>
-          </div>
-        </div>
-      </div>
-      <div className="container p-0">
-        <div className="container img-container p-0">
-          <img
-            src={restaurantChefB}
-            alt="Chef Cooking B"
-            className="img-fluid details-img"
-          />
-        </div>
+      {!isSubmitted && (
         <DetailsForm
           setPartySize={setPartySize}
           partySize={partySize}
@@ -94,11 +82,37 @@ const Details = ({ id }) => {
           availableTimes={availableTimes}
           setOccasion={setOccasion}
           occasion={occasion}
+          detailsFormIsSubmitted={detailsFormIsSubmitted}
           submitForm={submitForm}
         />
-
-        
-      </div>
+      )}
+      {isSubmitted && !isReserved &&(
+        <Reserve
+          id="reserve-page"
+          detailsFormIsSubmitted={detailsFormIsSubmitted}
+          partySize={partySize}
+          seatingType={seatingType}
+          date={date}
+          time={time}
+          occasion={occasion}
+          setFullName={setFullName}
+          setEmail={setEmail}
+          setPhoneNumber={setPhoneNumber}
+        />
+      )}
+      {isReserved && (
+        <Confirmation
+          id="confirmation-page"
+          partySize={partySize}
+          seatingType={seatingType}
+          date={date}
+          time={time}
+          occasion={occasion}
+          fullName={fullName}
+          email={email}
+          phoneNumber={phoneNumber}
+        />
+      )}
     </section>
   );
 };
