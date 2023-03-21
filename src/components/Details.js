@@ -26,7 +26,7 @@ const Details = ({ id }) => {
 
   //useReducer implementation for date
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const [availableTimes, dispatch] = useReducer(updateTimes, []);
 
   const [date, setDate] = useState(new Date());
 
