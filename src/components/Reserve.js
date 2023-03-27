@@ -6,7 +6,7 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import restaurant from "../assets/restaurant.jpg";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Reserve = (props) => {
   const navigate = useNavigate();
@@ -20,9 +20,6 @@ const Reserve = (props) => {
     props.setEmail(e.target.email.value);
     props.setPhoneNumber(e.target.phoneNumber.value);
   };
-
-  const [month, day] = props.date.toLocaleString().split('/');
-  const year = props.date.toLocaleString().year;
 
   return (
     <section className="container-fluid" id={props.id}>
