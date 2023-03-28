@@ -8,7 +8,11 @@ const Nav = ({ id }) => {
   return (
     <nav id={id} className="navbar sticky-top navbar-expand-lg p-3">
       <div className="container p-0">
-        <Link to="/" className="navbar-brand">
+        <Link
+          to="/"
+          className="navbar-brand"
+          onClick={() => localStorage.clear()}
+        >
           <img src={Logo} alt="Logo"></img>
         </Link>
         <button
@@ -25,7 +29,12 @@ const Nav = ({ id }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link" aria-current="page">
+              <Link
+                to="/"
+                className="nav-link"
+                aria-current="page"
+                onClick={() => localStorage.clear()}
+              >
                 Home
               </Link>
             </li>
@@ -40,7 +49,11 @@ const Nav = ({ id }) => {
               </a>
             </li>
             <li className="nav-item">
-              <Link to="/booking-details" className="nav-link">
+              <Link
+                to="/booking-details"
+                className="nav-link"
+                onClick={() => localStorage.clear()}
+              >
                 Reservations
               </Link>
             </li>

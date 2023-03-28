@@ -15,7 +15,9 @@ const Confirmation = (props) => {
       <div className="container details-header pb-4">
         <div className="container">
           <div className="d-flex flex-row justify-content-center p-0">
-            <h1 id="reserve-title" className="pt-5">Booking Confirmed!</h1>
+            <h1 id="reserve-title" className="pt-5">
+              Booking Confirmed!
+            </h1>
           </div>
         </div>
       </div>
@@ -59,17 +61,18 @@ const Confirmation = (props) => {
         {/*Replace with inputs */}
         <p className="customer-details ms-3">
           <img src={goingIcon} alt="img-fluid customer avatar" />
-          &nbsp; + {props.partySize - 1} people
+          {props.partySize > 1 && <p>&nbsp; + {props.partySize - 1} people</p>}
         </p>
         <p className="customer-details ms-1"> {props.fullName} </p>
         <h2>Important Information</h2>
         <p className="mb-4">
-          An email confirmation with your booking details has been sent to this email address: {props.email} <br/>
-          We'll try and reach you on {props.phoneNumber} if you are delayed, before cancelling the booking. <br/>
+          An email confirmation with your booking details has been sent to this
+          email address: {props.email} <br />
+          We'll try and reach you on {props.phoneNumber} if you are delayed,
+          before cancelling the booking. <br />
           We look forward to having you dine with us!
         </p>
       </div>
-
     </section>
   );
 };

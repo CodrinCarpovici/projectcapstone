@@ -6,6 +6,9 @@ import Confirmation from "./Confirmation.js";
 import Reserve from "./Reserve.js";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 
+//Local Storage
+import {useLocalStorage} from "../hooks/useLocalStorage";
+
 export function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
@@ -27,15 +30,15 @@ const Details = ({ id }) => {
   const navigate = useNavigate();
 
   //Form 1 Booking Details
-  const [partySize, setPartySize] = useState(null);
-  const [seatingType, setSeatingType] = useState(null);
-  const [time, setTime] = useState(null);
-  const [occasion, setOccasion] = useState(null);
+  const [partySize, setPartySize] = useLocalStorage("partySize", "");
+  const [seatingType, setSeatingType] = useLocalStorage("seatingType", "");
+  const [time, setTime] = useLocalStorage("time", "");
+  const [occasion, setOccasion] = useLocalStorage("occasion", "");
 
   //Form 2 Personal Details
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useLocalStorage("fullName", "");
+  const [email, setEmail] = useLocalStorage("email", "");
+  const [phoneNumber, setPhoneNumber] = useLocalStorage("phoneNumber", "");
 
   //useReducer implementation for date
 
