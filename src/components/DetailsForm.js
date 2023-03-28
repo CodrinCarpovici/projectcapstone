@@ -111,13 +111,14 @@ const DetailsForm = (props) => {
             </legend>
             <div className="form-group row mb-3">
               <div className="col mx-3">
-                <label htmlFor="select" className="form-label">
+                <label htmlFor="party-select" className="form-label">
                   Party Size
                 </label>
               </div>
               <div className="col-4 mx-3">
                 <select
-                  id="select"
+                  id="party-select"
+                  name="Party Size"
                   className={`form-select ${partySizeError && "is-invalid"}`}
                   onChange={(event) => props.setPartySize(event.target.value)}
                 >
@@ -129,18 +130,21 @@ const DetailsForm = (props) => {
                   <option value="5">5</option>
                   <option value="6">6</option>
                 </select>
-                {!isValid && <span className="error-message">{partySizeError}</span>}
+                {!isValid && (
+                  <span className="error-message">{partySizeError}</span>
+                )}
               </div>
             </div>
             <div className="form-group row mb-3">
               <div className="col mx-3">
-                <label htmlFor="select" className="form-label">
+                <label htmlFor="seating-select" className="form-label">
                   Seating Type
                 </label>
               </div>
               <div className="col-4 mx-3">
                 <select
-                  id="select"
+                  id="seating-select"
+                  name="Seating Type"
                   className={`form-select ${seatingTypeError && "is-invalid"}`}
                   onChange={(event) => props.setSeatingType(event.target.value)}
                 >
@@ -148,22 +152,28 @@ const DetailsForm = (props) => {
                   <option value="Outdoor">Outdoor</option>
                   <option value="Indoor">Indoor</option>
                 </select>
-                {!isValid && <span className="error-message">{seatingTypeError}</span>}
+                {!isValid && (
+                  <span className="error-message">{seatingTypeError}</span>
+                )}
               </div>
             </div>
             <div className="form-group row mb-3">
               <div className="col mx-3">
-                <label htmlFor="select" className="form-label date-select">
+                <label htmlFor="date-select" className="form-label date-select">
                   Date
                 </label>
               </div>
               <div className="col-4 mx-3">
                 <DatePicker
+                  id="date-select"
                   selected={props.date}
                   onChange={props.handleDateChange}
                   dateFormat="dd/MM/yyyy"
                   placeholderText="Select a Date"
-                  className={`form-select date-select ${dateError && "is-invalid"}`}
+                  name="Date"
+                  className={`form-select date-select ${
+                    dateError && "is-invalid"
+                  }`}
                   calendarClassName="custom-calendar"
                 />
                 {!isValid && <span className="error-message">{dateError}</span>}
@@ -171,13 +181,14 @@ const DetailsForm = (props) => {
             </div>
             <div className="form-group row mb-3">
               <div className="col mx-3">
-                <label htmlFor="select" className="form-label">
+                <label htmlFor="time-select" className="form-label">
                   Time
                 </label>
               </div>
               <div className="col-4 mx-3">
                 <select
-                  id="select"
+                  id="time-select"
+                  name="Time"
                   className={`form-select ${timeError && "is-invalid"}`}
                   onChange={(event) => props.setTime(event.target.value)}
                 >
@@ -194,13 +205,14 @@ const DetailsForm = (props) => {
             </div>
             <div className="form-group row mb-3">
               <div className="col mx-3">
-                <label htmlFor="select" className="form-label">
-                  Ocassion
+                <label htmlFor="occasion-select" className="form-label">
+                  Occasion
                 </label>
               </div>
               <div className="col-4 mx-3">
                 <select
-                  id="select"
+                  id="occasion-select"
+                  name="Occasion"
                   className={`form-select ${occasionError && "is-invalid"}`}
                   onChange={(event) => props.setOccasion(event.target.value)}
                 >
@@ -211,7 +223,9 @@ const DetailsForm = (props) => {
                   <option value="Anniversary">Anniversary</option>
                   <option value="Business">Business</option>
                 </select>
-                {!isValid && <span className="error-message">{occasionError}</span>}
+                {!isValid && (
+                  <span className="error-message">{occasionError}</span>
+                )}
               </div>
             </div>
 

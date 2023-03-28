@@ -92,7 +92,7 @@ const Reserve = (props) => {
           {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
-            {props.date.toLocaleDateString()}
+            {props.date ? props.date.toLocaleDateString() : ''}
           </p>
           <p>
             <img src={customerIcon} alt="customer icon" className="pe-3" />
@@ -120,7 +120,7 @@ const Reserve = (props) => {
               type="text"
               className={`form-control ${!isValid && fullNameError && "is-invalid"}`}
               id="inputName"
-              name="fullName"
+              name="Full Name"
               placeholder="Full Name..."
               onChange={(e) => props.setFullName(e.target.value)}
               required
@@ -128,14 +128,14 @@ const Reserve = (props) => {
             {!isValid && <span className="error-message">{fullNameError}</span>}
           </div>
           <div className="mb-3">
-            <label htmlFor="inputEmail1" className="form-label">
+            <label htmlFor="inputEmail" className="form-label">
               Email Address
             </label>
             <input
               type="email"
               className={`form-control ${!isValid && emailError && "is-invalid"}`}
-              id="inputEmail1"
-              name="email"
+              id="inputEmail"
+              name="Email Address"
               aria-describedby="emailHelp"
               placeholder="Email Address..."
               onChange={(e) => props.setEmail(e.target.value)}
@@ -152,7 +152,7 @@ const Reserve = (props) => {
               type="tel"
               className={`form-control ${!isValid && phoneNumberError &&"is-invalid"}`}
               id="inputPhoneNumber"
-              name="phoneNumber"
+              name="Phone Number"
               placeholder="Phone Number..."
               onChange={(e) => props.setPhoneNumber(e.target.value)}
               required
