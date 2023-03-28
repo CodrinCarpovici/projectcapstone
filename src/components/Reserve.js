@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import backArrow from "../assets/backArrow.png";
 import calendarIcon from "../assets/calendarIcon.svg";
 import clockIcon from "../assets/clockIcon.svg";
@@ -10,15 +10,54 @@ import { useNavigate } from "react-router-dom";
 
 const Reserve = (props) => {
   const navigate = useNavigate();
+  const [fullNameError, setFullNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [isValid, setIsValid] = useState(true);
+
+  const isEmail = (email) =>
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
+  const validateForm = () => {
+    let formisValid = true;
+  
+    if (!props.fullName) {
+      setFullNameError("Please add your name");
+      formisValid = false;
+    } else {
+      setFullNameError("");
+    }
+  
+    if (!props.email) {
+      setEmailError("Please add your email");
+      formisValid = false;
+    } else {
+      setEmailError("");
+    }
+
+    //Check if it's a real email
+    if (!isEmail(props.email)) {
+      setEmailError("Please add a valid email");
+    }
+  
+    if (!props.phoneNumber) {
+      setPhoneNumberError("Please add your phone number");
+      formisValid = false;
+    } else {
+      setPhoneNumberError("");
+    }
+  
+    setIsValid(formisValid);
+    return formisValid;
+  };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.detailsFormIsSubmitted();
-    // Update state with form inputs
-    props.setFullName(e.target.fullName.value);
-    props.setEmail(e.target.email.value);
-    props.setPhoneNumber(e.target.phoneNumber.value);
+
+    if (validateForm()) {
+      props.detailsFormIsSubmitted();
+    }
   };
 
   return (
@@ -44,7 +83,7 @@ const Reserve = (props) => {
         <div className="container img-container">
           <img
             src={restaurant}
-            alt="restaurant photo"
+            alt="restaurant"
             className="img-fluid header-img"
           />
         </div>
@@ -79,11 +118,13 @@ const Reserve = (props) => {
             <label htmlFor="inputName">Full Name</label>
             <input
               type="text"
-              className="form-control"
+              className={`form-control ${!isValid && fullNameError && "is-invalid"}`}
               id="inputName"
               name="fullName"
               placeholder="Full Name..."
+              onChange={(e) => props.setFullName(e.target.value)}
             />
+            {!isValid && <span className="error-message">{fullNameError}</span>}
           </div>
           <div className="mb-3">
             <label htmlFor="inputEmail1" className="form-label">
@@ -91,27 +132,32 @@ const Reserve = (props) => {
             </label>
             <input
               type="email"
-              className="form-control"
+              className={`form-control ${!isValid && emailError && "is-invalid"}`}
               id="inputEmail1"
               name="email"
               aria-describedby="emailHelp"
               placeholder="Email Address..."
+              onChange={(e) => props.setEmail(e.target.value)}
             />
-            <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
-            </div>
+            {!isValid && <span className="error-message">{emailError}</span>}
+            
           </div>
           <div className="mb-3">
             <label htmlFor="inputPhoneNumber" className="form-label">
-              Phone Number(Optional)
+              Phone Number
             </label>
             <input
               type="tel"
-              className="form-control"
+              className={`form-control ${!isValid && phoneNumberError &&"is-invalid"}`}
               id="inputPhoneNumber"
               name="phoneNumber"
               placeholder="Phone Number..."
+              onChange={(e) => props.setPhoneNumber(e.target.value)}
             />
+            {!isValid && <span className="error-message">{phoneNumberError}</span>}
+            <div id="emailHelp" className="form-text">
+              We'll never share your email or phone number with anyone else.
+            </div>
           </div>
           <div className="container p-0">
             <h2 className="important-info">Important Information</h2>

@@ -106,6 +106,12 @@ body {
       color: $primary-yellow;
     }
   }
+
+  .error-message {
+    color: red;
+    font-weight: normal;
+    font-size: 16px;
+  }
 }
 /*NAVBAR*/
 #navbar {

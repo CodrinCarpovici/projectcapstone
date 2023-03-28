@@ -107,6 +107,9 @@ const Details = ({ id }) => {
               date={date}
               time={time}
               occasion={occasion}
+              fullName={fullName}
+              email={email}
+              phoneNumber={phoneNumber}
               setFullName={setFullName}
               setEmail={setEmail}
               setPhoneNumber={setPhoneNumber}

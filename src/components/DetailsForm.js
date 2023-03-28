@@ -38,7 +38,6 @@ const DetailsForm = (props) => {
       setIsValid(false);
     } else {
       setPartySizeError("");
-      setIsValid(true);
     }
 
     if (!props.seatingType) {
@@ -47,7 +46,6 @@ const DetailsForm = (props) => {
       setIsValid(false);
     } else {
       setSeatingTypeError("");
-      setIsValid(true);
     }
 
     if (!props.date) {
@@ -56,7 +54,6 @@ const DetailsForm = (props) => {
       setIsValid(false);
     } else {
       setDateError("");
-      setIsValid(true);
     }
 
     if (!props.time) {
@@ -65,7 +62,6 @@ const DetailsForm = (props) => {
       setIsValid(false);
     } else {
       setTimeError("");
-      setIsValid(true);
     }
 
     if (!props.occasion) {
@@ -74,9 +70,9 @@ const DetailsForm = (props) => {
       setIsValid(false);
     } else {
       setOccasionError("");
-      setIsValid(true);
     }
 
+    setIsValid(isValid);
     return isValid;
   };
 
@@ -133,7 +129,7 @@ const DetailsForm = (props) => {
                   <option value="5">5</option>
                   <option value="6">6</option>
                 </select>
-                {!isValid && <span>{partySizeError}</span>}
+                {!isValid && <span className="error-message">{partySizeError}</span>}
               </div>
             </div>
             <div className="form-group row mb-3">
@@ -152,7 +148,7 @@ const DetailsForm = (props) => {
                   <option value="Outdoor">Outdoor</option>
                   <option value="Indoor">Indoor</option>
                 </select>
-                {!isValid && <span>{seatingTypeError}</span>}
+                {!isValid && <span className="error-message">{seatingTypeError}</span>}
               </div>
             </div>
             <div className="form-group row mb-3">
@@ -170,7 +166,7 @@ const DetailsForm = (props) => {
                   className={`form-select date-select ${dateError && "is-invalid"}`}
                   calendarClassName="custom-calendar"
                 />
-                {!isValid && <span>{dateError}</span>}
+                {!isValid && <span className="error-message">{dateError}</span>}
               </div>
             </div>
             <div className="form-group row mb-3">
@@ -193,7 +189,7 @@ const DetailsForm = (props) => {
                       </option>
                     ))}
                 </select>
-                {!isValid && <span>{timeError}</span>}
+                {!isValid && <span className="error-message">{timeError}</span>}
               </div>
             </div>
             <div className="form-group row mb-3">
@@ -215,7 +211,7 @@ const DetailsForm = (props) => {
                   <option value="Anniversary">Anniversary</option>
                   <option value="Business">Business</option>
                 </select>
-                {!isValid && <span>{occasionError}</span>}
+                {!isValid && <span className="error-message">{occasionError}</span>}
               </div>
             </div>
 
