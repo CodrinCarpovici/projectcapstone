@@ -1,4 +1,5 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, act, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import DetailsForm from "./components/DetailsForm";
 import { updateTimes, initializeTimes } from "./components/Details";
@@ -182,4 +183,96 @@ describe("Reserve Component attribute check", () => {
     );
     expect(phoneInput).toHaveAttribute("name", "Phone Number");
   });
+});
+
+
+describe("test if validation works as expected in DetailsForm component", () => {
+  test("validateForm detects invalid partySize", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Details>
+          <DetailsForm />
+        </Details>
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the partySize field
+    fireEvent.change(getByLabelText("Party Size"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Submit"));
+    expect(getByText("Please select a party size")).toBeInTheDocument();
+  });
+
+  test("validateForm detects invalid seatingType", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Details>
+          <DetailsForm />
+        </Details>
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the seatingType field
+    fireEvent.change(getByLabelText("Seating Type"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Submit"));
+    expect(getByText("Please select a seating type")).toBeInTheDocument();
+  })
+
+  test("validateForm detects invalid time", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Details>
+          <DetailsForm />
+        </Details>
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the time field
+    fireEvent.change(getByLabelText("Time"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Submit"));
+    expect(getByText("Please select a time")).toBeInTheDocument();
+  });
+
+  test("validateForm detects invalid occasion", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Details>
+          <DetailsForm />
+        </Details>
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the occasion field
+    fireEvent.change(getByLabelText("Occasion"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Submit"));
+    expect(getByText("Please select an occasion")).toBeInTheDocument();
+  });
+});
+
+describe("test if validation works as expected in Reserve component", () => {
+  test("validateForm detects invalid fullName", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Details>
+          <Reserve />
+        </Details>
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the partySize field
+    fireEvent.change(getByLabelText("Full Name"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Reserve"));
+    expect(getByText("Please add your name")).toBeInTheDocument();
+  });
+
+  //TOFINISH
 });
