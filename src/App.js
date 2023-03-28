@@ -4,8 +4,6 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
-import "bootstrap/dist/js/bootstrap.bundle";
-import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route } from "react-router-dom";
 
 function App() {

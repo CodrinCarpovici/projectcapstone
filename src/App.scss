@@ -143,6 +143,10 @@ body {
   .nav-link:hover::after {
     width: 100%;
   }
+
+  .navbar-toggler {
+    color: $primary-green;
+  }
 }
 
 /*HEADER*/
@@ -454,8 +458,6 @@ body {
       line-height: 1.5;
     }
 
-    .react-datepicker-popper {
-    }
 
     /* Custom styling of the selected date */
     .react-datepicker__day--selected {

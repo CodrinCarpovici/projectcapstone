@@ -7,7 +7,6 @@ import customerIcon from "../assets/customerIcon.svg";
 import dishIcon from "../assets/dishIcon.svg";
 import tableIcon from "../assets/tableIcon.svg";
 import goingIcon from "../assets/goingIcon.svg";
-import { Outlet } from "react-router-dom";
 
 const Confirmation = (props) => {
   return (
@@ -61,7 +60,7 @@ const Confirmation = (props) => {
         {/*Replace with inputs */}
         <p className="customer-details ms-3">
           <img src={goingIcon} alt="img-fluid customer avatar" />
-          {props.partySize > 1 && <p>&nbsp; + {props.partySize - 1} people</p>}
+          {props.partySize > 1 && <>&nbsp; + {props.partySize - 1} people</>}
         </p>
         <p className="customer-details ms-1"> {props.fullName} </p>
         <h2>Important Information</h2>
