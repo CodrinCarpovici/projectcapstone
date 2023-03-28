@@ -112,7 +112,33 @@ body {
     font-weight: normal;
     font-size: 16px;
   }
+
+  //Loading spinner
+  .loader-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.834) center;
+  }
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid $primary-yellow;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 0.3s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
 }
+
 /*NAVBAR*/
 #navbar {
   left: 0;
@@ -408,7 +434,7 @@ body {
     }
 
     select:hover {
-      cursor: pointer!important;
+      cursor: pointer !important;
     }
 
     select:active,
@@ -418,7 +444,7 @@ body {
 
     .date-select {
       color: $basic-b !important;
-      cursor: pointer!important;
+      cursor: pointer !important;
     }
     /* Custom size of the datepicker label and numbers */
     .react-datepicker__header {
@@ -457,7 +483,6 @@ body {
       font-weight: 400;
       line-height: 1.5;
     }
-
 
     /* Custom styling of the selected date */
     .react-datepicker__day--selected {

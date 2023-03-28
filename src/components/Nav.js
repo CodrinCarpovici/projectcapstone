@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 //FIX NAVBAR COLLAPSE
 
 const Nav = ({ id }) => {
+  
   return (
     <nav id={id} className="navbar sticky-top navbar-expand-lg p-3">
       <div className="container p-0">
@@ -28,24 +29,24 @@ const Nav = ({ id }) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            <li className="nav-item" >
               <Link
                 to="/"
                 className="nav-link"
                 aria-current="page"
                 onClick={() => localStorage.clear()}
               >
-                Home
+                <span data-bs-target="#navbarNav" data-bs-toggle="collapse">Home</span>
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" data-bs-toggle="collapse">
               <Link to="/about" className="nav-link" href="#about">
-                About
+              <span data-bs-target="#navbarNav" data-bs-toggle="collapse">About</span>
               </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#menu">
-                Menu
+              <span data-bs-target="#navbarNav" data-bs-toggle="collapse">Menu</span>
               </a>
             </li>
             <li className="nav-item">
@@ -54,17 +55,17 @@ const Nav = ({ id }) => {
                 className="nav-link"
                 onClick={() => localStorage.clear()}
               >
-                Reservations
+                <span data-bs-target="#navbarNav" data-bs-toggle="collapse">Reservations</span>
               </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#order-online">
-                Order Online
+              <span data-bs-target="#navbarNav" data-bs-toggle="collapse">Order Online</span>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#login">
-                Login
+              <span data-bs-target="#navbarNav" data-bs-toggle="collapse">Login</span>
               </a>
             </li>
           </ul>
