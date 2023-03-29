@@ -77,7 +77,7 @@ const Details = ({ id }) => {
   };
 
   return (
-    <section className="container-fluid" id={id}>
+    <article className="container-fluid" id={id}>
       <Routes>
         <Route
           path=""
@@ -137,7 +137,7 @@ const Details = ({ id }) => {
         />
       </Routes>
       <Outlet />
-    </section>
+    </article>
   );
 };
 

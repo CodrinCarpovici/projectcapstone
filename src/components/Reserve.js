@@ -61,7 +61,7 @@ const Reserve = (props) => {
   };
 
   return (
-    <section className="container-fluid" id={props.id}>
+    <article className="container-fluid" id={props.id}>
       <div className="container details-header pb-4">
         <div className="container">
           <div className="d-flex justify-content-start pt-3">
@@ -178,7 +178,7 @@ const Reserve = (props) => {
         </form>
       </div>
 
-    </section>
+    </article>
   );
 };
 

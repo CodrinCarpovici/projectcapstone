@@ -4,7 +4,7 @@ import marioAndAdrian from "../assets/Mario and Adrian A.jpg";
 
 const About = ({ id }) => {
   return (
-    <section id={id} className="container-fluid p-3">
+    <article id={id} className="container-fluid p-3">
       <div className="container">
         <div className="row">
           <div className="col">
@@ -35,7 +35,7 @@ const About = ({ id }) => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

@@ -185,7 +185,6 @@ describe("Reserve Component attribute check", () => {
   });
 });
 
-
 describe("test if validation works as expected in DetailsForm component", () => {
   test("validateForm detects invalid partySize", () => {
     const { getByLabelText, getByText } = render(
@@ -219,7 +218,7 @@ describe("test if validation works as expected in DetailsForm component", () => 
     // Submit the form and verify that an error message is displayed
     fireEvent.submit(getByText("Submit"));
     expect(getByText("Please select a seating type")).toBeInTheDocument();
-  })
+  });
 
   test("validateForm detects invalid time", () => {
     const { getByLabelText, getByText } = render(
@@ -260,9 +259,7 @@ describe("test if validation works as expected in Reserve component", () => {
   test("validateForm detects invalid fullName", () => {
     const { getByLabelText, getByText } = render(
       <BrowserRouter>
-        <Details>
-          <Reserve />
-        </Details>
+        <Reserve />
       </BrowserRouter>
     );
 
@@ -274,5 +271,33 @@ describe("test if validation works as expected in Reserve component", () => {
     expect(getByText("Please add your name")).toBeInTheDocument();
   });
 
-  //TOFINISH
+  test("validateForm detects invalid email", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Reserve />
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the partySize field
+    fireEvent.change(getByLabelText("Email Address"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Reserve"));
+    expect(getByText("Please add a valid email")).toBeInTheDocument();
+  });
+
+  test("validateForm detects invalid fullName", () => {
+    const { getByLabelText, getByText } = render(
+      <BrowserRouter>
+        <Reserve />
+      </BrowserRouter>
+    );
+
+    // Simulate an invalid input for the partySize field
+    fireEvent.change(getByLabelText("Phone Number"), { target: { value: "" } });
+
+    // Submit the form and verify that an error message is displayed
+    fireEvent.submit(getByText("Reserve"));
+    expect(getByText("Please add your phone number")).toBeInTheDocument();
+  });
 });

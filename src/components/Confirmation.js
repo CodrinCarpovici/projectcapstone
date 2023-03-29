@@ -10,7 +10,7 @@ import goingIcon from "../assets/goingIcon.svg";
 
 const Confirmation = (props) => {
   return (
-    <section className="container-fluid" id={props.id}>
+    <article className="container-fluid" id={props.id}>
       <div className="container details-header pb-4">
         <div className="container">
           <div className="d-flex flex-row justify-content-center p-0">
@@ -72,7 +72,7 @@ const Confirmation = (props) => {
           We look forward to having you dine with us!
         </p>
       </div>
-    </section>
+    </article>
   );
 };
 
