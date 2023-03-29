@@ -11,14 +11,14 @@ const Card = (props) => {
         <p className="card-text">{props.description}</p>
       </div>
       <div className="card-footer">
-        <a href="#delivery" className="btn btn-primary" role="button">
+        <button aria-label="On Click" href="#delivery" className="btn btn-primary" role="button">
           Order a delivery{" "}
           <img
             className="img-fluid shopping-icon"
             src={cartIcon}
             alt="shopping cart"
           />
-        </a>
+        </button>
       </div>
     </article>
   );

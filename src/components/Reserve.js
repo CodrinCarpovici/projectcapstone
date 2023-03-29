@@ -171,7 +171,7 @@ const Reserve = (props) => {
             </p>
           </div>
           <div className="pb-3 pt-3 d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary">
+            <button aria-label="On Click" type="submit" className="btn btn-primary">
               Reserve
             </button>
           </div>

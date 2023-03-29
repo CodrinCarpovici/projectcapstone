@@ -21,10 +21,10 @@ const Confirmation = (props) => {
         </div>
       </div>
       <div className="container icons-section d-flex flex-row justify-content-end p-0 mt-2">
-        <button className="btn">
+        <button className="btn" aria-label="On Click">
           <img src={calendarPlusIcon} alt="add to calendar" />
         </button>
-        <button className="btn">
+        <button className="btn" aria-label="On Click">
           <img src={shareIcon} alt="share booking" />
         </button>
       </div>

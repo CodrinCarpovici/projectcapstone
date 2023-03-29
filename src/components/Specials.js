@@ -11,13 +11,14 @@ const Specials = () => {
             <h1 id="specials-title">This Week's Specials</h1>
           </div>
           <div className="col btn-container">
-            <a
+            <button
               className="btn btn-primary float-end"
+              aria-label="On Click"
               href="#reserve"
               role="button"
             >
               Online Menu
-            </a>
+            </button>
           </div>
         </div>
         <div className="row ">
