@@ -1,0 +1,611 @@
+/*STYLE VARIABLES*/
+/*TYPEFACES*/
+$font-headline: "Markazi Text", serif;
+$font-content: "Karla", sans-serif;
+
+/*TYPE SYSTEM*/
+$display-title-fz: 64px;
+$display-title-fw: bold;
+
+$sub-title-fz: 40px;
+$sub-title-fw: normal;
+
+$lead-text-fz: 18px;
+$lead-text-fw: normal;
+$section-title-fz: 20px;
+$section-title-fw: bolder;
+$specials-fz: 16px;
+$specials-fw: bolder;
+$card-title-fz: 18px;
+$card-title-fw: bold;
+$paragraph-fz: 16px;
+$paragraph-fw: lighter;
+$highlight-text-fz: 16px;
+$highlight-text-fw: bold;
+
+$primary-yellow: #f4ce14;
+$hover-primary-yellow: #e4c113;
+$primary-green: #495e57;
+$hover-primary-green: #3c4d47;
+$secondary-orange: #ee9972;
+$secondary-pink: #fbdabb;
+$highlight-grey: #edefee;
+$highlight-black: #333333;
+$basic-b: black;
+$basic-w: white;
+
+$rounded-16: 16px;
+$rounded-8: 8px;
+
+$button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+$card-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+$img-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+/*APP*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: $font-content;
+
+  /*PRIMARY BUTTONS*/
+  .btn-primary {
+    background: $primary-yellow !important;
+    border: none !important;
+    font-family: $font-content !important;
+    font-size: $card-title-fz !important;
+    font-weight: $card-title-fw !important;
+    color: $basic-b !important;
+    box-shadow: $button-shadow;
+  }
+
+  .btn-primary:hover {
+    background: $hover-primary-yellow !important;
+  }
+
+  .btn-primary:active {
+    background: $secondary-orange !important;
+    color: $basic-w !important;
+  }
+  /*FORM HEADER/OUTLINE BUTTON*/
+  .details-header {
+    background: $primary-green;
+
+    .back-arrow {
+      width: 30px;
+      margin-right: 5px;
+    }
+
+    .btn-outline-primary {
+      background: none;
+      border-color: $primary-yellow !important;
+      color: $primary-yellow;
+      font-weight: $section-title-fw;
+      font-size: $section-title-fz;
+    }
+
+    .btn-outline-primary:hover {
+      background: $hover-primary-green;
+    }
+
+    .btn-outline-primary:active {
+      background: $secondary-orange !important;
+      color: $basic-w;
+    }
+
+    #reserve-title {
+      font-family: $font-headline;
+      font-size: $display-title-fz;
+      font-weight: $display-title-fw;
+      color: $primary-yellow;
+    }
+  }
+
+  .error-message {
+    color: red;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  //Loading spinner
+  .loader-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.834) center;
+  }
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid $primary-yellow;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 0.3s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/*NAVBAR*/
+#navbar {
+  left: 0;
+  top: 0;
+  background: $basic-w;
+  font-weight: $display-title-fw;
+  font-size: $section-title-fz;
+  box-shadow: $button-shadow;
+
+  .nav-link {
+    background-color: $basic-w;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+  }
+
+  .nav-link::after {
+    background-color: $primary-yellow;
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .navbar-toggler {
+    color: $primary-green;
+  }
+}
+
+/*HEADER*/
+#main-header {
+  background: $primary-green;
+  position: relative;
+
+  #main-title {
+    font-family: $font-headline;
+    font-weight: $display-title-fw;
+    font-size: $display-title-fz;
+    color: $primary-yellow;
+  }
+
+  #main-subtitle {
+    font-family: $font-headline;
+    font-weight: $sub-title-fw;
+    font-size: $sub-title-fz;
+    color: $basic-w;
+  }
+
+  #main-text {
+    font-weight: $lead-text-fw;
+    font-size: $lead-text-fz;
+    color: $basic-w;
+  }
+
+  .btn-primary {
+    background: $primary-yellow;
+    border: none;
+    color: $basic-b;
+    font-weight: $section-title-fw;
+    font-size: $section-title-fz;
+  }
+
+  .img-container {
+    max-height: 350px;
+    max-width: 400px;
+    overflow: hidden;
+  }
+
+  .header-img {
+    object-fit: cover;
+    box-shadow: $img-shadow;
+  }
+}
+
+/*MAIN*/
+
+/*SPECIALS*/
+#specials {
+  #title-section {
+    #specials-title {
+      font-family: $font-headline;
+      font-size: $sub-title-fz;
+      font-weight: $sub-title-fw;
+      margin-top: 15px;
+    }
+    .btn-primary {
+      background: $primary-yellow;
+      border: none;
+      color: $basic-b;
+      font-weight: $section-title-fw;
+      font-size: $section-title-fz;
+      margin-top: 15px;
+    }
+  }
+
+  .card {
+    background: $highlight-grey;
+    box-shadow: $card-shadow;
+  }
+  .card-img-top {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+  }
+  .name {
+    font-size: $card-title-fz;
+    font-weight: $card-title-fw;
+  }
+  .card-text {
+    font-size: $paragraph-fz;
+    font-weight: $paragraph-fw;
+  }
+  .card-footer {
+    background: $highlight-grey;
+    border: none;
+
+    .btn-primary {
+      background: $primary-yellow;
+      border: none;
+      color: $basic-b;
+      font-weight: $section-title-fw;
+      font-size: $section-title-fz;
+    }
+
+    .shopping-icon {
+      height: 30px;
+    }
+  }
+}
+
+/*TESTIMONIALS*/
+
+#testimonials {
+  background: $basic-w;
+
+  .card {
+    box-shadow: $card-shadow;
+  }
+
+  #testimonials-title {
+    font-family: $font-headline;
+    font-size: $sub-title-fz;
+    font-weight: $sub-title-fw;
+    margin-top: 15px;
+    color: $basic-b;
+  }
+
+  .rating {
+    font-size: $section-title-fz;
+    font-weight: $section-title-fw;
+  }
+
+  .title-container {
+    display: flex;
+  }
+  .star-icon {
+    height: 20px;
+  }
+  .profile-img {
+    min-height: 100%;
+    object-fit: cover;
+  }
+  .name {
+    font-size: $card-title-fz;
+    font-weight: $card-title-fw;
+  }
+  .card-text {
+    font-size: $paragraph-fz;
+    font-weight: $paragraph-fw;
+  }
+}
+
+/*ABOUT*/
+
+#about {
+  #about-title {
+    font-family: $font-headline;
+    font-weight: $display-title-fw;
+    font-size: $display-title-fz;
+    color: $primary-yellow;
+  }
+
+  #about-subtitle {
+    font-family: $font-headline;
+    font-weight: $sub-title-fw;
+    font-size: $sub-title-fz;
+    color: $basic-b;
+  }
+
+  #about-text {
+    font-weight: $lead-text-fw;
+    font-size: $lead-text-fz;
+    color: $basic-b;
+  }
+  .col {
+    position: relative;
+    overflow: hidden;
+  }
+  .top-img {
+    position: absolute;
+    max-width: 250px;
+    z-index: 1;
+    top: 25%;
+    left: 20%;
+  }
+
+  .bottom-img {
+    position: absolute;
+    max-width: 250px;
+    z-index: -1;
+    left: 30%;
+  }
+
+  .img-fluid {
+    box-shadow: $img-shadow;
+  }
+}
+
+/*FOOTER*/
+#footer {
+  background: $primary-green;
+
+  img {
+    max-width: 100px;
+  }
+
+  h3 {
+    font-size: $card-title-fz;
+    font-weight: $card-title-fw;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    font-size: $paragraph-fz;
+    font-weight: $paragraph-fw;
+  }
+
+  a {
+    text-decoration: none;
+    color: $highlight-black;
+  }
+
+  a:hover {
+    color: $basic-b;
+  }
+}
+
+/*DETAILS*/
+#details-page {
+  .details-header {
+    max-height: 200px;
+  }
+  .img-container {
+    max-height: 400px;
+    overflow: hidden;
+  }
+  .details-img {
+    box-shadow: $img-shadow;
+    object-fit: cover;
+  }
+
+  #details-form {
+    background: $highlight-grey;
+    .form-title {
+      font-family: $font-content;
+      font-size: $sub-title-fz;
+      font-weight: $sub-title-fw;
+    }
+
+    .form-group {
+      font-family: $font-content;
+      font-size: $lead-text-fz;
+      font-weight: $lead-text-fw;
+    }
+
+    select {
+      box-shadow: $button-shadow;
+      border-color: $primary-green;
+      border: 2px solid;
+      color: $primary-green;
+      background-color: #edefee;
+      font-weight: $display-title-fw;
+    }
+
+    select:hover {
+      cursor: pointer !important;
+    }
+
+    select:active,
+    select:focus {
+      border-color: $primary-yellow;
+    }
+
+    .date-select {
+      color: $basic-b !important;
+      cursor: pointer !important;
+    }
+    /* Custom size of the datepicker label and numbers */
+    .react-datepicker__header {
+      width: 100%;
+      background-color: $primary-green !important;
+    }
+
+    .react-datepicker__day-name,
+    .react-datepicker__current-month {
+      color: $basic-w;
+    }
+    .react-datepicker__input-container input {
+      height: 38px;
+      font-size: 16px;
+      font-weight: $display-title-fw;
+      line-height: 1.5;
+      box-shadow: $button-shadow;
+      border-color: $primary-green;
+      border: 2px solid;
+      color: $primary-green !important;
+      background-color: #edefee !important;
+    }
+
+    .react-datepicker__input-container input:active,
+    .react-datepicker__input-container input:focus {
+      border-color: $primary-yellow;
+    }
+
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name,
+    .react-datepicker__time {
+      width: 55px !important;
+      height: 55px !important;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Custom styling of the selected date */
+    .react-datepicker__day--selected {
+      background-color: $primary-yellow !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+    }
+
+    .react-datepicker-popper[data-show="true"]
+      .react-datepicker__month
+      .react-datepicker__day--selected {
+      background-color: #f4ce14 !important;
+    }
+
+    @media only screen and (max-width: 400px) {
+      .react-datepicker__day-name,
+      .react-datepicker__day,
+      .react-datepicker__time-name,
+      .react-datepicker__time {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  /*RESERVE*/
+  #reserve-page {
+    .details-header {
+      max-height: 200px;
+    }
+    .header {
+      position: relative;
+    }
+
+    .img-container {
+      max-height: 650px;
+      max-width: 600px;
+      overflow: hidden;
+    }
+
+    .header-img {
+      height: 650px;
+      width: 600px;
+      object-fit: cover;
+      box-shadow: $img-shadow;
+    }
+
+    .date {
+      text-align: center;
+    }
+    .details-text {
+      background: $primary-green;
+      color: $basic-w;
+      max-width: 70%;
+      max-height: 85%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+      box-shadow: $card-shadow;
+
+      h1 {
+        font-weight: $section-title-fw;
+        font-size: $display-title-fz;
+      }
+
+      h2 {
+        font-weight: $sub-title-fw;
+        font-size: $sub-title-fz;
+      }
+    }
+
+    .form {
+      .mb-3 {
+        font-size: $highlight-text-fz;
+        font-weight: $highlight-text-fw;
+
+        #emailHelp {
+          font-weight: normal;
+        }
+
+        input {
+          font-weight: normal;
+        }
+      }
+
+      .important-info {
+        font-weight: $highlight-text-fw;
+        font-size: $highlight-text-fz;
+      }
+
+      .info-text {
+        font-weight: $paragraph-fw;
+        font-size: $paragraph-fz;
+      }
+    }
+  }
+
+  /*CONFIRMATION*/
+  #confirmation-page {
+    .details-header {
+      height: 200px;
+    }
+    h1 {
+      font-weight: $display-title-fw;
+      font-size: $sub-title-fz;
+    }
+
+    .details-text {
+      font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+    }
+
+    .customer-section {
+      .customer-details {
+        font-weight: $highlight-text-fw;
+        font-size: $highlight-text-fz;
+      }
+    }
+  }
+}

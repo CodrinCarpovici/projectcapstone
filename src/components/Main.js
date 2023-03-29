@@ -1,16 +1,17 @@
 import React from "react";
-import About from "./About";
+import Spinner from "../Spinner";
+import Header from "./Header";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
 
-const Main = () => {
+const Main = ({ id }) => {
   return (
-    <>
+    <main id={id}>
       {" "}
-      <Specials />
-      <Testimonials />
-      <About />
-    </>
+      <Header id="main-header" />
+      <Specials id="specials" />
+      <Testimonials id="testimonials" />
+    </main>
   );
 };
 
