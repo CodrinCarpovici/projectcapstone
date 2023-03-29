@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import backArrow from "../assets/backArrow.png";
 import calendarIcon from "../assets/calendarIcon.svg";
 import clockIcon from "../assets/clockIcon.svg";
@@ -59,6 +59,10 @@ const Reserve = (props) => {
       props.detailsFormIsSubmitted();
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <article className="container-fluid" id={props.id}>

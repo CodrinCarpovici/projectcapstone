@@ -7,7 +7,7 @@ import Reserve from "./Reserve.js";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 
 //Local Storage
-import {useLocalStorage} from "../hooks/useLocalStorage";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export function updateTimes(state, action) {
   switch (action.type) {
@@ -73,6 +73,7 @@ const Details = ({ id }) => {
     }
   };
 
+
   return (
     <article className="container-fluid" id={id}>
       <Routes>
@@ -93,6 +94,7 @@ const Details = ({ id }) => {
               occasion={occasion}
               detailsFormIsSubmitted={detailsFormIsSubmitted}
               submitForm={submitForm}
+              
             />
           }
         />
@@ -102,6 +104,7 @@ const Details = ({ id }) => {
             <Reserve
               id="reserve-page"
               detailsFormIsSubmitted={detailsFormIsSubmitted}
+              isSubmitted={isSubmitted}
               partySize={partySize}
               seatingType={seatingType}
               date={date}
@@ -113,6 +116,7 @@ const Details = ({ id }) => {
               setFullName={setFullName}
               setEmail={setEmail}
               setPhoneNumber={setPhoneNumber}
+              
             />
           }
         />
@@ -121,6 +125,7 @@ const Details = ({ id }) => {
           element={
             <Confirmation
               id="confirmation-page"
+              isReserved={isReserved}
               partySize={partySize}
               seatingType={seatingType}
               date={date}
@@ -129,6 +134,7 @@ const Details = ({ id }) => {
               fullName={fullName}
               email={email}
               phoneNumber={phoneNumber}
+              
             />
           }
         />

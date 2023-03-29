@@ -76,6 +76,7 @@ const DetailsForm = (props) => {
     return isValid;
   };
 
+
   return (
     <>
       <div className="container details-header pb-4">
@@ -230,7 +231,7 @@ const DetailsForm = (props) => {
             </div>
 
             <div className="pb-3 pt-3 d-flex justify-content-center">
-              <button type="submit" className="btn btn-primary">
+              <button aria-label="On Click" type="submit" className="btn btn-primary">
                 Submit
               </button>
             </div>
