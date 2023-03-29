@@ -11,10 +11,12 @@ The Little Lemon restaurant needs a reserve a table feature along with a homepag
 ## Technologies
 
 - React
-- HTML5
+- Semantic HTML5
+- openGraph Protocol
 - Javascript
 - CSS3
 - Figma(for design)
+- Follows WCAG Guidelines
 
 ## Design
 
@@ -31,8 +33,4 @@ I've created a Persona, Journey Map, Wireframes and High-Fidelity Designs and Pr
 ### Wireframes, High-Fidelity Designs and Prototypes
 
 [Click here to view the Figma wireframes and Designs for the Little Lemon Website](https://www.figma.com/file/X0ewa9NhfTN0ifcjIMfmF1/Project-Capstone-LL?node-id=0%3A1&t=trcCXB2BGQJxhWw5-1)
-
-## Semantic HTML5 structure
-
-## React
 
