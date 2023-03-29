@@ -62,15 +62,12 @@ const Details = ({ id }) => {
 
   const detailsFormIsSubmitted = () => {
     setIsReserved(true);
-    console.log(isReserved);
     navigate("confirmation");
   };
 
   const submitForm = async (formData) => {
     const success = await submitAPI(formData);
     if (success) {
-      console.log(success);
-      console.log(isSubmitted);
       setIsSubmitted(true);
       navigate("reserve");
     }

@@ -14,7 +14,11 @@ const Header = ({ id }) => {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <Link to="/booking-details" aria-label="On Click" className="btn btn-primary" role="button">
+            <Link
+              to="/booking-details"
+              aria-label="On Click"
+              className="btn btn-primary"
+            >
               Reserve a Table
             </Link>
           </div>

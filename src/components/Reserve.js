@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import backArrow from "../assets/backArrow.png";
 import calendarIcon from "../assets/calendarIcon.svg";
 import clockIcon from "../assets/clockIcon.svg";
@@ -16,18 +16,18 @@ const Reserve = (props) => {
   const [isValid, setIsValid] = useState(true);
 
   const isEmail = (email) =>
-  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
   const validateForm = () => {
     let formisValid = true;
-  
+
     if (!props.fullName) {
       setFullNameError("Please add your name");
       formisValid = false;
     } else {
       setFullNameError("");
     }
-  
+
     if (!props.email) {
       setEmailError("Please add your email");
       formisValid = false;
@@ -39,14 +39,14 @@ const Reserve = (props) => {
     if (!isEmail(props.email)) {
       setEmailError("Please add a valid email");
     }
-  
+
     if (!props.phoneNumber) {
       setPhoneNumberError("Please add your phone number");
       formisValid = false;
     } else {
       setPhoneNumberError("");
     }
-  
+
     setIsValid(formisValid);
     return formisValid;
   };
@@ -89,10 +89,9 @@ const Reserve = (props) => {
         </div>
         <div className="container  details-text p-4">
           <h2 className="text-center">Little Lemon</h2>
-          {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
-            {props.date ? props.date.toLocaleDateString() : ''}
+            {props.date ? props.date.toLocaleDateString() : ""}
           </p>
           <p>
             <img src={customerIcon} alt="customer icon" className="pe-3" />
@@ -118,7 +117,9 @@ const Reserve = (props) => {
             <label htmlFor="inputName">Full Name</label>
             <input
               type="text"
-              className={`form-control ${!isValid && fullNameError && "is-invalid"}`}
+              className={`form-control ${
+                !isValid && fullNameError && "is-invalid"
+              }`}
               id="inputName"
               name="Full Name"
               placeholder="Full Name..."
@@ -132,7 +133,9 @@ const Reserve = (props) => {
             </label>
             <input
               type="email"
-              className={`form-control ${!isValid && emailError && "is-invalid"}`}
+              className={`form-control ${
+                !isValid && emailError && "is-invalid"
+              }`}
               id="inputEmail"
               name="Email Address"
               aria-describedby="emailHelp"
@@ -140,7 +143,6 @@ const Reserve = (props) => {
               onChange={(e) => props.setEmail(e.target.value)}
             />
             {!isValid && <span className="error-message">{emailError}</span>}
-            
           </div>
           <div className="mb-3">
             <label htmlFor="inputPhoneNumber" className="form-label">
@@ -148,13 +150,17 @@ const Reserve = (props) => {
             </label>
             <input
               type="tel"
-              className={`form-control ${!isValid && phoneNumberError &&"is-invalid"}`}
+              className={`form-control ${
+                !isValid && phoneNumberError && "is-invalid"
+              }`}
               id="inputPhoneNumber"
               name="Phone Number"
               placeholder="Phone Number..."
               onChange={(e) => props.setPhoneNumber(e.target.value)}
             />
-            {!isValid && <span className="error-message">{phoneNumberError}</span>}
+            {!isValid && (
+              <span className="error-message">{phoneNumberError}</span>
+            )}
             <div id="emailHelp" className="form-text">
               We'll never share your email or phone number with anyone else.
             </div>
@@ -168,13 +174,16 @@ const Reserve = (props) => {
             </p>
           </div>
           <div className="pb-3 pt-3 d-flex justify-content-center">
-            <button aria-label="On Click" type="submit" className="btn btn-primary">
+            <button
+              aria-label="On Click"
+              type="submit"
+              className="btn btn-primary"
+            >
               Reserve
             </button>
           </div>
         </form>
       </div>
-
     </article>
   );
 };

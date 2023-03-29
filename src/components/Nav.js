@@ -2,8 +2,6 @@ import React from "react";
 import Logo from "../assets/Logo.svg";
 import { Link } from "react-router-dom";
 
-//FIX NAVBAR COLLAPSE
-
 const Nav = ({ id }) => {
   
   return (

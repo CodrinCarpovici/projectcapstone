@@ -136,7 +136,7 @@ body {
     100% {
       transform: rotate(360deg);
     }
-  } 
+  }
 }
 
 /*NAVBAR*/
@@ -496,103 +496,116 @@ body {
       .react-datepicker__day--selected {
       background-color: #f4ce14 !important;
     }
-  }
-}
 
-/*RESERVE*/
-#reserve-page {
-  .details-header {
-    max-height: 200px;
-  }
-  .header {
-    position: relative;
-  }
-
-  .img-container {
-    max-height: 650px;
-    max-width: 600px;
-    overflow: hidden;
+    @media only screen and (max-width: 400px) {
+      .react-datepicker__day-name,
+      .react-datepicker__day,
+      .react-datepicker__time-name,
+      .react-datepicker__time {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
   }
 
-  .header-img {
-    height: 650px;
-    width: 600px;
-    object-fit: cover;
-    box-shadow: $img-shadow;
-  }
-
-  .date {
-    text-align: center;
-  }
-  .details-text {
-    background: $primary-green;
-    color: $basic-w;
-    max-width: 70%;
-    max-height: 85%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: $highlight-text-fw;
-    font-size: $highlight-text-fz;
-    box-shadow: $card-shadow;
-
-    h1 {
-      font-weight: $section-title-fw;
-      font-size: $display-title-fz;
+  /*RESERVE*/
+  #reserve-page {
+    .details-header {
+      max-height: 200px;
+    }
+    .header {
+      position: relative;
     }
 
-    h2 {
-      font-weight: $sub-title-fw;
+    .img-container {
+      max-height: 650px;
+      max-width: 600px;
+      overflow: hidden;
+    }
+
+    .header-img {
+      height: 650px;
+      width: 600px;
+      object-fit: cover;
+      box-shadow: $img-shadow;
+    }
+
+    .date {
+      text-align: center;
+    }
+    .details-text {
+      background: $primary-green;
+      color: $basic-w;
+      max-width: 70%;
+      max-height: 85%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+      box-shadow: $card-shadow;
+
+      h1 {
+        font-weight: $section-title-fw;
+        font-size: $display-title-fz;
+      }
+
+      h2 {
+        font-weight: $sub-title-fw;
+        font-size: $sub-title-fz;
+      }
+    }
+
+    .form {
+      .mb-3 {
+        font-size: $highlight-text-fz;
+        font-weight: $highlight-text-fw;
+
+        #emailHelp {
+          font-weight: normal;
+        }
+
+        input {
+          font-weight: normal;
+        }
+      }
+
+      .important-info {
+        font-weight: $highlight-text-fw;
+        font-size: $highlight-text-fz;
+      }
+
+      .info-text {
+        font-weight: $paragraph-fw;
+        font-size: $paragraph-fz;
+      }
+    }
+  }
+
+  /*CONFIRMATION*/
+  #confirmation-page {
+    .details-header {
+      height: 200px;
+    }
+    h1 {
+      font-weight: $display-title-fw;
       font-size: $sub-title-fz;
     }
-  }
 
-  .form {
-    .mb-3 {
-      font-size: $highlight-text-fz;
+    .details-text {
       font-weight: $highlight-text-fw;
+      font-size: $highlight-text-fz;
+    }
 
-      #emailHelp {
-        font-weight: normal;
+    .customer-section {
+      .customer-details {
+        font-weight: $highlight-text-fw;
+        font-size: $highlight-text-fz;
       }
-
-      input {
-        font-weight: normal;
-      }
-    }
-
-    .important-info {
-      font-weight: $highlight-text-fw;
-      font-size: $highlight-text-fz;
-    }
-
-    .info-text {
-      font-weight: $paragraph-fw;
-      font-size: $paragraph-fz;
-    }
-  }
-}
-
-/*CONFIRMATION*/
-#confirmation-page {
-  .details-header {
-    height: 200px;
-  }
-  h1 {
-    font-weight: $display-title-fw;
-    font-size: $sub-title-fz;
-  }
-
-  .details-text {
-    font-weight: $highlight-text-fw;
-    font-size: $highlight-text-fz;
-  }
-
-  .customer-section {
-    .customer-details {
-      font-weight: $highlight-text-fw;
-      font-size: $highlight-text-fz;
     }
   }
 }

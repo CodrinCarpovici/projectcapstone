@@ -31,7 +31,6 @@ const Confirmation = (props) => {
       <div className="container details-section">
         <div className="container details-text p-0">
           <h1 className="mb-4">Little Lemon</h1>
-          {/*Replace with inputs */}
           <p>
             <img src={calendarIcon} alt="calendar icon" className="pe-3" />
             {props.date.toLocaleDateString()}
@@ -57,7 +56,6 @@ const Confirmation = (props) => {
       </div>
       <div className="container customer-section">
         <h1>Who's going?</h1>
-        {/*Replace with inputs */}
         <p className="customer-details ms-3">
           <img src={goingIcon} alt="img-fluid customer avatar" />
           {props.partySize > 1 && <>&nbsp; + {props.partySize - 1} people</>}
