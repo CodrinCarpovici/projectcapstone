@@ -123,7 +123,6 @@ const Reserve = (props) => {
               name="Full Name"
               placeholder="Full Name..."
               onChange={(e) => props.setFullName(e.target.value)}
-              required
             />
             {!isValid && <span className="error-message">{fullNameError}</span>}
           </div>
@@ -139,7 +138,6 @@ const Reserve = (props) => {
               aria-describedby="emailHelp"
               placeholder="Email Address..."
               onChange={(e) => props.setEmail(e.target.value)}
-              required
             />
             {!isValid && <span className="error-message">{emailError}</span>}
             
@@ -155,7 +153,6 @@ const Reserve = (props) => {
               name="Phone Number"
               placeholder="Phone Number..."
               onChange={(e) => props.setPhoneNumber(e.target.value)}
-              required
             />
             {!isValid && <span className="error-message">{phoneNumberError}</span>}
             <div id="emailHelp" className="form-text">

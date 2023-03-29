@@ -11,7 +11,7 @@ const Card = (props) => {
         <p className="card-text">{props.description}</p>
       </div>
       <div className="card-footer">
-        <button aria-label="On Click" href="#delivery" className="btn btn-primary" role="button">
+        <button aria-label="On Click" href="#delivery" className="btn btn-primary">
           Order a delivery{" "}
           <img
             className="img-fluid shopping-icon"

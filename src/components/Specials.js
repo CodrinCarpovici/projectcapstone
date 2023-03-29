@@ -15,7 +15,6 @@ const Specials = () => {
               className="btn btn-primary float-end"
               aria-label="On Click"
               href="#reserve"
-              role="button"
             >
               Online Menu
             </button>
